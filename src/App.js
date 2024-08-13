@@ -1,31 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { HomePage, AboutPage } from './pages';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-      axios.get('http://localhost:8999/api/v1/test')
-          .then(response => {
-              setData(response.data);
-          })
-          .catch(error => {
-              console.error('Error fetching data:', error);
-          });
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      </header>
-    </div>
+  <div class="container">
+    <BrowserRouter>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="/">NCP</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Routes>
+        <Route index element={<HomePage/>}/>
+        <Route path="about" element={<AboutPage/>}/>
+      </Routes>
+    </BrowserRouter>
+  </div>
   );
 }
 
