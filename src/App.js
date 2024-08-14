@@ -1,8 +1,10 @@
 import './App.css';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.scss';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { HomePage, AboutPage } from './pages';
+import { Faq } from './components';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -19,6 +21,7 @@ function App() {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/faq">Faq</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -26,6 +29,7 @@ function App() {
       <Routes>
         <Route index element={<HomePage/>}/>
         <Route path="about" element={<AboutPage/>}/>
+        <Route path="faq" element={<Faq/>}/>
       </Routes>
     </BrowserRouter>
   </div>
