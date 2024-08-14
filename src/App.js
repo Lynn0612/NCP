@@ -12,7 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function App() {
   return (
-  <div class="container">
+  <div className="container">
     <BrowserRouter>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>

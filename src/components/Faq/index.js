@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { getFaqs } from '@rsrc/api';
 import "./style.scss"
-
-
 
 const Faq = () => {
     const data = [
