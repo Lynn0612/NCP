@@ -7,14 +7,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Faq = () => {
     return (
-        <div className="circle">
-            <i class="bi bi-plus"></i>
-        </div>
-        /* <div className="faq">
+        <div className="faq">
             <div>
                 <p class="fw-bold fs-1 m-0">FAQ</p>
                 <span class="py-2 d-flex justify-content-between align-items-center">Frequently Asked Questions
-                    <span class="m-0"> More Resources<img src="./right.svg" alt="FAQ Icon" class="righticon" /></span>
+                    <span class="d-flex justify-content-between"> More Resources <div className="circleBg"><i class="bi bi-arrow-right"></i></div></span>
                 </span>
             </div>
             <hr class="hr my-2"></hr>
@@ -30,11 +27,13 @@ const Faq = () => {
                         aria-controls="collapseExample"
                     >
                         How does the card work?
-                        <img src="./FAQ icon.svg" alt="FAQ Icon" class="icon" />
+                        <div className="circle">
+                            <i class="bi bi-plus"></i>
+                        </div>
                     </div>
                     <div class="collapse mt-2" id="collapse1">
                         <div class="p-3">
-                        Frequently Asked Questions
+                            Frequently Asked Questions
                         </div>
                     </div>
                 </li>
@@ -49,11 +48,13 @@ const Faq = () => {
                         aria-controls="collapseExample"
                     >
                         Where is the card avaliable?
-                        <img src="./FAQ icon.svg" alt="FAQ Icon" class="icon" />
+                        <div className="circle">
+                            <i class="bi bi-plus"></i>
+                        </div>
                     </div>
                     <div class="collapse mt-2" id="collapse2">
                         <div class="p-3">
-                        Frequently Asked Questions
+                            Frequently Asked Questions
                         </div>
                     </div>
                 </li>
@@ -68,11 +69,13 @@ const Faq = () => {
                         aria-controls="collapseExample"
                     >
                         What is the difference betwee plastic and virtual cards?
-                        <img src="./FAQ icon.svg" alt="FAQ Icon" class="icon" />
+                        <div className="circle">
+                            <i class="bi bi-plus"></i>
+                        </div>
                     </div>
                     <div class="collapse mt-2" id="collapse3">
                         <div class="p-3">
-                        Frequently Asked Questions
+                            Frequently Asked Questions
                         </div>
                     </div>
                 </li>
@@ -87,11 +90,13 @@ const Faq = () => {
                         aria-controls="collapseExample"
                     >
                         How many days will it take to issue my card?
-                        <img src="./FAQ icon.svg" alt="FAQ Icon" class="icon" />
+                        <div className="circle">
+                            <i class="bi bi-plus"></i>
+                        </div>
                     </div>
                     <div class="collapse mt-2" id="collapse4">
                         <div class="p-3">
-                        Frequently Asked Questions
+                            Frequently Asked Questions
                         </div>
                     </div>
                 </li>
@@ -106,16 +111,19 @@ const Faq = () => {
                         aria-controls="collapseExample"
                     >
                         Are there any fees?
-                        <img src="./FAQ icon.svg" alt="FAQ Icon" class="icon" />
+                        <div className="circle">
+                            <i class="bi bi-plus"></i>
+                        </div>
                     </div>
                     <div class="collapse mt-2" id="collapse5">
                         <div class="p-3">
-                        Frequently Asked Questions
+                            Frequently Asked Questions
                         </div>
                     </div>
                 </li>
+                <li class="list-group-item py-4"></li>
             </ul>
-        </div> */
+        </div>
     )
 }
 export default Faq
