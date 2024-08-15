@@ -3,28 +3,13 @@ import { getFaqs } from '@rsrc/api';
 import "./style.scss"
 
 const Faq = () => {
-    const data = [
-        {
-            question: 'How does the card work?',
-            answer: 'This is the answer to "How does the card work?"'
-        },
-        {
-            question: 'Where is the card available?',
-            answer: 'This is the answer to "Where is the card available?"'
-        },
-        {
-            question: 'What is the difference between plastic and virtual cards?',
-            answer: 'This is the answer to "What is the difference between plastic and virtual cards?"'
-        },
-        {
-            question: 'How many days will it take to issue my card?',
-            answer: 'This is the answer to "How many days will it take to issue my card?"'
-        },
-        {
-            question: 'Are there any fees?',
-            answer: 'This is the answer to "Are there any fees?"'
-        }
-    ];
+    const [data, setData] = useState([]); 
+    useEffect(() => {
+        getFaqs().then(json => {
+            console.log(json.data.length === 0); 
+            setData(json.data); 
+        })
+    }, []);
     return (
         <div className="faq">
             <div>
@@ -35,7 +20,7 @@ const Faq = () => {
             </div>
             <hr className="hr my-2"></hr>
             <ul className="list-group list-group-flush">
-                {data.map((item, index) => (
+                {data.map((item, index) => ( 
                     <li className="list-group-item py-4" key={index}>
                         <div
                             className="d-flex justify-content-between align-items-center"
