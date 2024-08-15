@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import "./style.scss"
+import { Faq } from '@/components';
+import { MiddleBanner } from './banners';
+import Container from 'react-bootstrap/Container';
 
-const HomePage = () => {
-    return (
-        <div className="home">
-            Home Page :)
-        </div>
-    )
-}
+const HomePage = () => (
+<>
+    <MiddleBanner />
+    <Container>
+        <Faq />
+    </Container>
+</>)
 export default HomePage

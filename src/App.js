@@ -1,18 +1,16 @@
 import './App.css';
 import './App.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.scss';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, AboutPage } from './pages';
-import { Faq } from './components';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function App() {
   return (
-  <div className="container">
     <BrowserRouter>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
@@ -31,7 +29,6 @@ function App() {
         <Route path="about" element={<AboutPage/>}/>
       </Routes>
     </BrowserRouter>
-  </div>
   );
 }
 

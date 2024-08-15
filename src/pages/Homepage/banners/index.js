@@ -1,0 +1,1 @@
+export { MiddleBanner } from './MiddleBanner';
