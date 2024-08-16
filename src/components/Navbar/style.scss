@@ -1,29 +1,29 @@
 .NavBar{
-    background-color: var(--ncp-blue);
+    background-color: var(--ncp-primary-1);
 }
 
 .btn{
     color: white;
-    background-color: var(--ncp-yellow);
+    background-color: var(--ncp-highlight);
     font-size: 12px;
 
     &:hover {
-        background-color:var(--ncp-yellow);
+        background-color:var(--ncp-highlight);
         color: white;
     }
     
     &:active {
-        background-color: var(--ncp-yellow) !important;
+        background-color: var(--ncp-highlight) !important;
         color: white !important; 
         filter: brightness(85%);
     }
 }
 
 .dropdown-menu {
-    background-color: var(--ncp-blue);
+    background-color: var(--ncp-primary-1);
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: (var(--ncp-blue)); 
+    background-color: (var(--ncp-primary-1)); 
     filter: brightness(85%);
 }

@@ -1,10 +1,10 @@
 .hr {
     border: 0.2px solid;
-    color: var(--ncp-muted);
+    color: var(--ncp-gray-1);
 }
 
 .faq span {
-    color:var(--ncp-muted);
+    color:var(--ncp-gray-3);
     font-size: 12px;
 }
 
@@ -15,7 +15,7 @@
 .circle {
     width: 25px;
     height: 25px;
-    background-color: var(--ncp-yellow);
+    background-color: var(--ncp-highlight);
     color: white;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
 .circle-bg {
     width: 15px;
     height: 15px;
-    background-color: var(--ncp-yellow);
+    background-color: var(--ncp-highlight);
     color: white;
     display: flex;
     align-items: center;
@@ -39,5 +39,5 @@
 }
 
 .hr-last{
-    color: var(--ncp-muted);
+    color: var(--ncp-gray-4);
 }
