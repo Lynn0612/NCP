@@ -1,8 +1,8 @@
-.NavBar{
+.navbar-bg{
     background-color: var(--ncp-primary-1);
 }
 
-.btn{
+.My-btn{
     color: white;
     background-color: var(--ncp-highlight);
     font-size: 12px;
@@ -19,11 +19,24 @@
     }
 }
 
-.dropdown-menu {
-    background-color: var(--ncp-primary-1);
-}
-
-.dropdown-menu .dropdown-item:hover {
+.dropdown-item:hover {
     background-color: (var(--ncp-primary-1)); 
     filter: brightness(85%);
 }
+
+.My-dropdown-toggle {
+    border: none;
+    background-color: var(--ncp-primary-1);
+    color: white;
+    margin: 0 20px;
+  }
+  
+  .My-dropdown-menu {
+    border: none;
+    background-color: var(--ncp-primary-1);
+  }
+
+  .nav-link {
+    color: white;
+    margin: 0 20px;
+  }
