@@ -29,6 +29,7 @@
     color: var(--ncp-gray-4);
     background-color: var(--ncp-bg-3);
     position: relative;
+    width: 50%;
 }
 
 .card-table th:not(:last-child)::after {

@@ -3,6 +3,7 @@ import "./style.scss"
 import { Button, Card } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { getNews } from '@rsrc/api';
+// import moment from 'moment';
 
 const MyCard = () => {
     const [data, setData] = useState([]); 
@@ -25,15 +26,20 @@ const MyCard = () => {
             </div>
             <hr className="hr"></hr>
             <div className="d-flex justify-content-around">
-                {data.map((item, index) => (
+                {data.map((item, index) => {
+                    const datePart = item.posted_at.substring(0, 10);
+                    const [year, month, day] = datePart.split('-');
+                    const formattedDate = `${month}-${day}-${year}`;
+                    return (
                 <Card className="shadow border-0" style={{ width: "410.67px" }} key={index}>
                     <Card.Img variant="top" src={item.cover_url} />
-                    <Card.Body className="p-0 rounded">
+                    <Card.Body className="p-0 rounded card-body">
                         <Table striped className="card-table">
                             <thead>
                                 <tr>
-                                    <th>{item.posted_at}</th>
-                                    <th>international News</th>
+                                    {/* <th>{formattedDate} · {moment(item.posted_at).fromNow()}</th> */}
+                                    <th>{formattedDate}</th>
+                                    <th>{item.category}</th>
                                 </tr>
                             </thead>
                         </Table>
@@ -46,7 +52,8 @@ const MyCard = () => {
                         </div>
                     </Card.Body>
                 </Card>
-                ))}
+                    );
+                })}
             </div>
         </div>
     )
