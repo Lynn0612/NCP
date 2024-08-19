@@ -1,0 +1,19 @@
+image: node:20.16.0-slim
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        caches:
+          - node
+        script:
+          - npm install
+          - npm test
+          - npm run build
+        artifacts:
+          - build/**
+  branches:
+    develop:
+      - step:
+          script:
+            - ssh -p 2202 61.user@222.164.167
+            - whoami
