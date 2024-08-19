@@ -1,2 +1,3 @@
 export {default as Faq} from "./Faq"
-export {default as Navbar} from "./Navbar"
+export {default as UserNavbar} from "./UserNavbar"
+export {default as UserCard} from "./UserCard"
