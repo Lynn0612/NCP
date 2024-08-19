@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import "./style.scss"
 import { Button, Card } from 'react-bootstrap';
-import cardimg from './cardimg.png';
 import Table from 'react-bootstrap/Table';
+import { getNews } from '@rsrc/api';
 
 const MyCard = () => {
+    const [data, setData] = useState([]); 
+    useEffect(() => {
+        getNews().then(json => {
+            setData(json.data); 
+        })
+    }, []);
     return (
         <div className="home-page">
             <div className="d-flex justify-content-between">
@@ -19,26 +25,28 @@ const MyCard = () => {
             </div>
             <hr className="hr"></hr>
             <div className="d-flex justify-content-around">
-                <Card className="shadow border-0" style={{ width: "410.67px" }}>
-                    <Card.Img variant="top" src={cardimg} />
+                {data.map((item, index) => (
+                <Card className="shadow border-0" style={{ width: "410.67px" }} key={index}>
+                    <Card.Img variant="top" src={item.cover_url} />
                     <Card.Body className="p-0 rounded">
                         <Table striped className="card-table">
                             <thead>
                                 <tr>
-                                    <th>07-30-2024 · 7 Min</th>
+                                    <th>{item.posted_at}</th>
                                     <th>international News</th>
                                 </tr>
                             </thead>
                         </Table>
                         <div className="m-4">
-                        <Card.Title className="fw-bold">Reinforcing Our Culture In Valle de Bravo - Cultivo's Global Team Summit</Card.Title>
+                        <Card.Title className="fw-bold">{item.title}</Card.Title>
                         <Card.Text className="text-truncate-multiline m-0">
-                            Costa Rica and Ghana agree  landmark deals to supply  forest carbon credits to  LEAF Coalition buyers
+                            {item.summary}
                         </Card.Text>
                         <Button className="my-btn btn border-0 fw-bold px-3 my-5 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>
                         </div>
                     </Card.Body>
                 </Card>
+                ))}
             </div>
         </div>
     )
