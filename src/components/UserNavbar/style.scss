@@ -1,0 +1,42 @@
+.navbar-bg{
+    background-color: var(--ncp-primary-1);
+}
+
+.My-btn{
+    color: white;
+    background-color: var(--ncp-highlight);
+    font-size: 12px;
+
+    &:hover {
+        background-color:var(--ncp-highlight);
+        color: white;
+    }
+    
+    &:active {
+        background-color: var(--ncp-highlight) !important;
+        color: white !important; 
+        filter: brightness(85%);
+    }
+}
+
+.dropdown-item:hover {
+    background-color: (var(--ncp-primary-1)); 
+    filter: brightness(85%);
+}
+
+.My-dropdown-toggle {
+    border: none;
+    background-color: var(--ncp-primary-1);
+    color: white;
+    margin: 0 20px;
+  }
+  
+  .My-dropdown-menu {
+    border: none;
+    background-color: var(--ncp-primary-1);
+  }
+
+  .nav-link {
+    color: white;
+    margin: 0 20px;
+  }
