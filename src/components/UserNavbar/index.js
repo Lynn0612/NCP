@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container, Dropdown ,ButtonToolbar ,Button } from 'react-bootstrap';
 import './style.scss';
 
-const MyNavbar = () => {
+const UserNavbar = () => {
     return (
         <Navbar expand="lg" className="navbar-bg">
             <Container>
@@ -10,7 +10,7 @@ const MyNavbar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto navcolor">
-                        <Nav.Link href="/about">About Us</Nav.Link>
+                        <Nav.Link href="#">About Us</Nav.Link>
                         <Dropdown>
                             <Dropdown.Toggle className="My-dropdown-toggle" variant="" id="dropdown-basic">
                                 Products
@@ -33,4 +33,4 @@ const MyNavbar = () => {
         </Navbar>
     )
 }
-export default MyNavbar
+export default UserNavbar

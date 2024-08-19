@@ -3,9 +3,9 @@ import "./style.scss"
 import { Button, Card } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { getNews } from '@rsrc/api';
-// import moment from 'moment';
+import moment from 'moment';
 
-const MyCard = () => {
+const UserCard = () => {
     const [data, setData] = useState([]); 
     useEffect(() => {
         getNews().then(json => {
@@ -26,19 +26,14 @@ const MyCard = () => {
             </div>
             <hr className="hr"></hr>
             <div className="d-flex justify-content-around">
-                {data.map((item, index) => {
-                    const datePart = item.posted_at.substring(0, 10);
-                    const [year, month, day] = datePart.split('-');
-                    const formattedDate = `${month}-${day}-${year}`;
-                    return (
+                {data.map((item, index) => (
                 <Card className="shadow border-0" style={{ width: "410.67px" }} key={index}>
                     <Card.Img variant="top" src={item.cover_url} />
                     <Card.Body className="p-0 rounded card-body">
                         <Table striped className="card-table">
                             <thead>
                                 <tr>
-                                    {/* <th>{formattedDate} · {moment(item.posted_at).fromNow()}</th> */}
-                                    <th>{formattedDate}</th>
+                                    <th>{moment(item.posted_at).format('MM-DD-YYYY')}</th>
                                     <th>{item.category}</th>
                                 </tr>
                             </thead>
@@ -52,10 +47,9 @@ const MyCard = () => {
                         </div>
                     </Card.Body>
                 </Card>
-                    );
-                })}
+                ))}
             </div>
         </div>
     )
 }
-export default MyCard
+export default UserCard

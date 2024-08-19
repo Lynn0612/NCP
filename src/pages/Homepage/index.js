@@ -3,14 +3,14 @@ import "./style.scss"
 import { Faq } from '@/components';
 import { MiddleBanner } from './banners';
 import Container from 'react-bootstrap/Container';
-import { MyCard } from '@/components';
+import { UserCard } from '@/components';
 
 const HomePage = () => (
 <>
     
     <MiddleBanner />
     <Container>
-        <MyCard />
+        <UserCard />
         <Faq />
     </Container>
 </>)
