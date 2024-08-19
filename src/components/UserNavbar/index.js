@@ -21,9 +21,9 @@ const UserNavbar = () => {
                                 <Dropdown.Item href="#">3</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                        <Nav.Link href="/about">Data Panels</Nav.Link>
-                        <Nav.Link href="/about">Subscription</Nav.Link>
-                        <Nav.Link href="/about">Blog</Nav.Link>
+                        <Nav.Link href="#">Data Panels</Nav.Link>
+                        <Nav.Link href="#">Subscription</Nav.Link>
+                        <Nav.Link href="#">Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
                         <Button bsSize="xsmall" className="My-btn btn border-0 fw-bold px-3">Contact Us</Button>
