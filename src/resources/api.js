@@ -4,6 +4,9 @@ export const getFaqs = () => {
 export const getNews = () => {
     return getData(`v1/news`);
 };
+export const getNewsContent = (slug) => {
+    return getData(`v1/news/content`, {slug: slug});
+};
 
 const getData = (uri, data) => {
     let url = `${process.env.REACT_APP_API_URL}${uri}`;
