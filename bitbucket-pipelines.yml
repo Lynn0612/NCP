@@ -11,4 +11,4 @@ pipelines:
           script:
             # - ssh -p $SSH_PORT $SSH_TARGET
             # - whoami
-            - whoami && ls -al | ssh $SSH_TARGET -p $SSH_PORT
+            - ls -al | ssh $SSH_TARGET -p $SSH_PORT
