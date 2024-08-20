@@ -4,14 +4,18 @@ import { Faq } from '@/components';
 import { MiddleBanner } from './banners';
 import Container from 'react-bootstrap/Container';
 import { UserCard } from '@/components';
+import { InsideBanner } from '@/components';
 
 const HomePage = () => (
-<>
-    
-    <MiddleBanner />
-    <Container>
-        <UserCard />
-        <Faq />
-    </Container>
-</>)
+    <>
+
+        <MiddleBanner />
+        <Container>
+            <UserCard />
+        </Container>
+        <InsideBanner />
+        <Container>
+            <Faq />
+        </Container>
+    </>)
 export default HomePage
