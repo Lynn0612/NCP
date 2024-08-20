@@ -1,4 +1,6 @@
-image: testcontainers/sshd
+# image: testcontainers/sshd
+image: atlassian/default-image:latest
+
 pipelines:
   custom:
     custom-deploy:
@@ -7,5 +9,6 @@ pipelines:
           default: "22"
       - step:
           script:
-            - ssh -p $SSH_PORT $SSH_TARGET
-            - whoami
+            # - ssh -p $SSH_PORT $SSH_TARGET
+            # - whoami
+            - whoami && ls -al | ssh $SSH_TARGET -p $SSH_PORT
