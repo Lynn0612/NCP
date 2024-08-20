@@ -1,10 +1,10 @@
 image: ubuntu:24.04
 pipelines:
-  branches:
-    develop:
+  custom:
+    custom-deploy:
       - variables:
         - name: SSH_PORT
-          default: 22
+          default: "22"
       - step:
           script:
             - ssh -p $SSH_PORT $SSH_TARGET
