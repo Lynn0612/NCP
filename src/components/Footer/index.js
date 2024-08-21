@@ -5,9 +5,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Image } from 'react-bootstrap';
 import footerlogo from './footerlogo.png';
-import inLink from './inLink.png';
-import twLink from './twLink.png';
-import igLink from './igLink.png';
 import { Nav, Button } from 'react-bootstrap';
 
 const footer = () => {
