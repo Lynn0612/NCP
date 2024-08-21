@@ -6,7 +6,6 @@ const Faq = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         getFaqs().then(json => {
-            console.log(json.data.length === 0);
             setData(json.data);
         })
     }, []);
@@ -30,7 +29,7 @@ const Faq = () => {
                             aria-expanded="false"
                             aria-controls="collapseExample"
                         >
-                            {item.question}                                
+                            {item.question}
                             <div className="circle">
                                 <i className="bi bi-plus"></i>
                             </div>
