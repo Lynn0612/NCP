@@ -1,12 +1,14 @@
 import React from 'react';
 import { Navbar, Nav, Container, Dropdown ,ButtonToolbar ,Button } from 'react-bootstrap';
 import './style.scss';
+import logo from './logo.svg';
+import { Image } from 'react-bootstrap';
 
 const UserNavbar = () => {
     return (
         <Navbar expand="lg" className="navbar-bg">
             <Container>
-                <Navbar.Brand href="/"><img src="./logo.svg" alt="Logo" /></Navbar.Brand>
+                <Navbar.Brand href="/"><Image src={logo} className="logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto navcolor">
