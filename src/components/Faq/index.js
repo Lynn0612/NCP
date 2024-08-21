@@ -11,7 +11,7 @@ const Faq = () => {
         })
     }, []);
     return (
-        <div className="faq">
+        <div className="faq my-5">
             <div>
                 <p className="fw-bold fs-1 m-0">FAQ</p>
                 <span className="py-2 d-flex justify-content-between align-items-center">Frequently Asked Questions
