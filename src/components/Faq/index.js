@@ -30,24 +30,14 @@ const Faq = () => {
                             aria-expanded="false"
                             aria-controls="collapseExample"
                         >
-                            {item.question.split('\n').map((line, idx) => (
-                                    <React.Fragment key={idx}>
-                                        {line}
-                                        <br />
-                                    </React.Fragment>
-                                ))}
+                            {item.question}                                
                             <div className="circle">
                                 <i className="bi bi-plus"></i>
                             </div>
                         </div>
                         <div className="collapse mt-2 faq-answer" id={`collapse${index}`}>
                             <div className="p-3">
-                                {item.answer.split('\n').map((line, idx) => (
-                                    <React.Fragment key={idx}>
-                                        {line}
-                                        <br />
-                                    </React.Fragment>
-                                ))}
+                                {item.answer}
                             </div>
                         </div>
                     </li>
