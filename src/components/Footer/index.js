@@ -24,7 +24,7 @@ const footer = () => {
             <Nav.Link href="#" className="footer-link">Privacy Policy</Nav.Link>
             <Nav.Link href="#" className="footer-link">Terms and conditions</Nav.Link>
           </Col>
-          <Col lg={2} md={3}  xs={6}>
+          <Col lg={2} md={3} xs={6}>
             <Nav.Link href="#" className="footer-link">Products</Nav.Link>
             <Nav.Link href="#" className="footer-link">Data Panels</Nav.Link>
             <Nav.Link href="#" className="footer-link">ubscription</Nav.Link>
@@ -41,9 +41,9 @@ const footer = () => {
         <Row className="mt-5">
           <Col className="d-flex flex-column align-items-end">
             <div className="d-flex justify-content-end mb-2">
-              <Image src={inLink} className="me-2" />
-              <Image src={twLink} className="me-2" />
-              <Image src={igLink} />
+              <i className="bi bi-linkedin m-1"></i>
+              <i className="bi bi-twitter m-1"></i>
+              <i className="bi bi-instagram m-1"></i>
             </div>
             <p className="text-end">© NCP, 2024. All rights reserved.</p>
           </Col>
