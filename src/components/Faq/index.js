@@ -12,9 +12,9 @@ const Faq = () => {
     return (
         <div className="faq my-5">
             <div>
-                <p className="fw-bold fs-1 m-0">FAQ</p>
-                <span className="py-2 d-flex justify-content-between align-items-center">Frequently Asked Questions
-                    <span className="d-flex justify-content-between"> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                <p className="fw-bold title-fs m-0">FAQ</p>
+                <span className="py-2 d-flex justify-content-between align-items-center title-sm-fs">Frequently Asked Questions
+                    <span className="d-flex justify-content-between more"> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
                 </span>
             </div>
             <hr className="hr my-2"></hr>

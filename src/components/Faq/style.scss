@@ -1,11 +1,10 @@
 .hr {
     border: 0.2px solid;
-    color: var(--ncp-gray-1);
+    color: var(--ncp-black-1);
 }
 
 .faq span {
-    color:var(--ncp-gray-3);
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .righticon {
@@ -48,9 +47,22 @@
     overflow-wrap: break-word;
     word-break: break-word; 
     white-space: pre;
+    font-size: 24px;
 }
 
 .faq-answer {
     overflow-wrap: break-word;
     margin-right: 20px;
+}
+
+.title-fs{
+    font-size: 40px;
+}
+
+.title-sm-fs{
+    color: var(--ncp-gray-3);
+}
+
+.more {
+    color: var(--ncp-black-1);
 }

@@ -22,16 +22,17 @@
     color: white; 
     text-align: left;
     padding: 20px;
+    font-size: 24px;
     @include media-breakpoint-down(sm) {
         height: 100%;
         max-height: none;
     }
 }
 
-.My-btn{
+.my-btn{
     color: white;
     background-color: var(--ncp-highlight);
-    font-size: 12px;
+    font-size: 16px;
 
     &:hover {
         background-color:var(--ncp-highlight);

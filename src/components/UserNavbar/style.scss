@@ -1,42 +1,29 @@
-.navbar-bg{
+.navbar-bg {
     background-color: var(--ncp-secondary);
 }
 
-.My-btn{
+.my-btn {
     color: white;
     background-color: var(--ncp-highlight);
-    font-size: 12px;
+    font-size: 16px;
 
     &:hover {
-        background-color:var(--ncp-highlight);
+        background-color: var(--ncp-highlight);
         color: white;
     }
-    
+
     &:active {
         background-color: var(--ncp-highlight) !important;
-        color: white !important; 
+        color: white !important;
         filter: brightness(85%);
     }
 }
 
-.dropdown-item:hover {
-    background-color: (var(--ncp-secondary)); 
-    filter: brightness(85%);
+.nav-link {
+    color: white;
+    margin: 0 20px;
+    
+    &.active {
+        color: white !important;
+    }
 }
-
-.My-dropdown-toggle {
-    border: none;
-    background-color: var(--ncp-secondary);
-    color: white;
-    margin: 0 20px;
-  }
-  
-  .My-dropdown-menu {
-    border: none;
-    background-color: var(--ncp-secondary);
-  }
-
-  .nav-link {
-    color: white;
-    margin: 0 20px;
-  }

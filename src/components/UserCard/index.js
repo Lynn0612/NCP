@@ -15,9 +15,9 @@ const UserCard = () => {
     return (
         <div className="home-card">
             <div className="d-flex justify-content-between">
-                <span className="fw-bold fs-1 m-0">News and Updates</span>
+                <span className="fw-bold titlefs m-0">News and Updates</span>
                 <div className="d-flex align-items-end my-2 card-color">
-                    <span>More Resources</span>
+                    <span>More News</span>
                     <div className="circle-bg">
                         <i className="bi bi-arrow-right">
                         </i>
@@ -40,7 +40,7 @@ const UserCard = () => {
                         </Table>
                         <div className="m-4">
                         <Card.Title className="fw-bold">{item.title}</Card.Title>
-                        <Card.Text className="text-truncate-multiline m-0">
+                        <Card.Text className="text-truncate-multiline m-0 card-text">
                             {item.summary}
                         </Card.Text>
                         <Button className="my-btn btn border-0 fw-bold px-3 my-5 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>

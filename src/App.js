@@ -6,15 +6,17 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, AboutPage } from './pages';
 import { UserNavbar} from '@/components';
+import { Footer } from '@/components';
 
 function App() {
   return (
     <BrowserRouter>
-      <UserNavbar></UserNavbar>
+      <UserNavbar />
       <Routes>
         <Route index element={<HomePage/>}/>
         <Route path="about" element={<AboutPage/>}/>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
