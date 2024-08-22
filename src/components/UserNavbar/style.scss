@@ -1,5 +1,5 @@
 .navbar-bg{
-    background-color: var(--ncp-primary-1);
+    background-color: var(--ncp-secondary);
 }
 
 .My-btn{
@@ -20,20 +20,20 @@
 }
 
 .dropdown-item:hover {
-    background-color: (var(--ncp-primary-1)); 
+    background-color: (var(--ncp-secondary)); 
     filter: brightness(85%);
 }
 
 .My-dropdown-toggle {
     border: none;
-    background-color: var(--ncp-primary-1);
+    background-color: var(--ncp-secondary);
     color: white;
     margin: 0 20px;
   }
   
   .My-dropdown-menu {
     border: none;
-    background-color: var(--ncp-primary-1);
+    background-color: var(--ncp-secondary);
   }
 
   .nav-link {
