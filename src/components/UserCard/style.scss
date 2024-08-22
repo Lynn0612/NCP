@@ -75,8 +75,8 @@ border-bottom: 1px solid var(--ncp-gray-4);
     }
 }
 
-.home-card {
-    margin-bottom: 48px;
+.desk-margin {
+    margin: 60px 0;
 }
 
 .titlefs{
@@ -86,4 +86,8 @@ border-bottom: 1px solid var(--ncp-gray-4);
 .card-text{
     font-size: 14px;
     color: var(--ncp-black-1);
+}
+
+.hr-margin{
+    margin: 24px 0;
 }

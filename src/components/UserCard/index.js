@@ -13,7 +13,7 @@ const UserCard = () => {
         })
     }, []);
     return (
-        <div className="home-card">
+        <div className="desk-margin">
             <div className="d-flex justify-content-between">
                 <span className="fw-bold titlefs m-0">News and Updates</span>
                 <div className="d-flex align-items-end my-2 card-color">
@@ -24,7 +24,7 @@ const UserCard = () => {
                     </div>
                 </div>
             </div>
-            <hr className="hr"></hr>
+            <hr className="hr hr-margin"></hr>
             <div className="d-flex justify-content-around">
                 {data.map((item, index) => (
                 <Card className="shadow border-0" style={{ width: "410.67px" }} key={index}>

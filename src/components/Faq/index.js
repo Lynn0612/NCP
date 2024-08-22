@@ -17,12 +17,12 @@ const Faq = () => {
                     <span className="d-flex justify-content-between more"> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
                 </span>
             </div>
-            <hr className="hr my-2"></hr>
+            <hr className="hr"></hr>
             <ul className="list-group list-group-flush">
                 {data.map((item, index) => (
-                    <li className="list-group-item py-4" key={index}>
+                    <li className="list-group-item" key={index}>
                         <div
-                            className="d-flex justify-content-between align-items-center faq-question"
+                            className="d-flex justify-content-between align-items-center faq-question hr-margin"
                             data-bs-toggle="collapse"
                             href={`#collapse${index}`}
                             role="button"
