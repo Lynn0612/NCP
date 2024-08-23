@@ -5,7 +5,6 @@ import { MiddleBanner } from './banners';
 import Container from 'react-bootstrap/Container';
 import { UserCard } from '@/components';
 import { InsideBanner } from '@/components';
-import { Footer } from '@/components';
 import { Partners } from '@/components';
 
 const HomePage = () => (
@@ -19,6 +18,5 @@ const HomePage = () => (
         <Container>
             <Faq />
         </Container>
-        <Footer />
     </>)
 export default HomePage

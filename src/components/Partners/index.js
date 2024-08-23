@@ -25,7 +25,7 @@ const Partners = () => {
         partners9
     ];
     return (
-        <Container fluid>
+        <Container fluid id="partners">
             <div className="slider">
                 <div className="slider-items">
                     {partners.map((src, index) => (

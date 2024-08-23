@@ -1,56 +1,78 @@
-.hr {
-    border: 0.2px solid;
-    color: var(--ncp-gray-1);
-}
+#home-faq {
 
-.faq span {
-    color:var(--ncp-gray-3);
-    font-size: 12px;
-}
+    .hr {
+        border: 0.2px solid;
+        color: var(--ncp-black-1);
+        margin-top: 24px !important;
+        margin-bottom: 0 !important;
+    }
 
-.righticon {
-    padding: 0 15px;
-}
+    .faq span {
+        font-size: 14px;
+    }
 
-.circle {
-    width: 25px;
-    height: 25px;
-    background-color: var(--ncp-highlight);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    border-radius: 50%;
-    margin-left: 10px;
-    flex-shrink: 0;
-}
+    .righticon {
+        padding: 0 15px;
+    }
 
-.circle-bg {
-    width: 15px;
-    height: 15px;
-    background-color: var(--ncp-highlight);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    border-radius: 50%;
-    margin: 0 20px;
-    padding: 8px;
-}
+    .circle {
+        width: 25px;
+        height: 25px;
+        background-color: var(--ncp-highlight);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 50%;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
 
-.hr-last{
-    color: var(--ncp-gray-4);
-}
+    .circle-bg {
+        width: 15px;
+        height: 15px;
+        background-color: var(--ncp-highlight);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        border-radius: 50%;
+        margin: 0 20px;
+        padding: 8px;
+    }
 
-.faq-question {
-    overflow-wrap: break-word;
-    word-break: break-word; 
-    white-space: pre;
-}
+    .hr-last {
+        color: var(--ncp-gray-4);
+    }
 
-.faq-answer {
-    overflow-wrap: break-word;
-    margin-right: 20px;
+    .faq-question {
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: pre;
+        font-size: 24px;
+    }
+
+    .faq-answer {
+        overflow-wrap: break-word;
+        margin-right: 20px;
+    }
+
+    .title-fs {
+        font-size: 40px;
+    }
+
+    .title-sm-fs {
+        color: var(--ncp-gray-3);
+        font-size: 14px;
+    }
+
+    .more {
+        color: var(--ncp-black-1);
+    }
+
+    .hr-margin {
+        margin: 16px 0;
+    }
 }
