@@ -13,7 +13,7 @@ const UserCard = () => {
         })
     }, []);
     return (
-        <div className="desk-margin">
+        <div className="desk-margin" id="home-card">
             <div className="d-flex justify-content-between">
                 <span className="fw-bold titlefs m-0">News and Updates</span>
                 <div className="d-flex align-items-end my-2 card-color">

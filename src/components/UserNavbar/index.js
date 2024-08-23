@@ -1,12 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Container, Dropdown ,ButtonToolbar ,Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, ButtonToolbar ,Button } from 'react-bootstrap';
 import './style.scss';
 import logo from './navbarlogo.png';
 import { Image } from 'react-bootstrap';
 
 const UserNavbar = () => {
     return (
-        <Navbar expand="lg" className="navbar-bg">
+        <Navbar expand="lg" id="navbar">
             <Container>
                 <Navbar.Brand href="/"><Image src={logo} className="logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

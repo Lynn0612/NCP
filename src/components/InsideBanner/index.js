@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 const InsideBanner = () => {
 
     return (
-        <Container fluid className="mb-5">
+        <Container fluid className="mb-5" id="home-insidebanner">
             <Row>
                 <Col xs={8} className="banner-area px-0 position-relative">
                     <Image src={banner} className="banner-cover" />

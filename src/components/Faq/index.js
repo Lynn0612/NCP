@@ -10,7 +10,7 @@ const Faq = () => {
         })
     }, []);
     return (
-        <div className="faq my-5">
+        <div className="faq my-5" id="home-faq">
             <div>
                 <p className="fw-bold title-fs m-0">FAQ</p>
                 <span className="py-2 d-flex justify-content-between align-items-center title-sm-fs">Frequently Asked Questions

@@ -1,29 +1,30 @@
-.navbar-bg {
+#navbar {
+
     background-color: var(--ncp-secondary);
-}
 
-.my-btn {
-    color: white;
-    background-color: var(--ncp-highlight);
-    font-size: 16px;
-
-    &:hover {
-        background-color: var(--ncp-highlight);
+    .my-btn {
         color: white;
+        background-color: var(--ncp-highlight);
+        font-size: 16px;
+
+        &:hover {
+            background-color: var(--ncp-highlight);
+            color: white;
+        }
+
+        &:active {
+            background-color: var(--ncp-highlight) !important;
+            color: white !important;
+            filter: brightness(85%);
+        }
     }
 
-    &:active {
-        background-color: var(--ncp-highlight) !important;
-        color: white !important;
-        filter: brightness(85%);
-    }
-}
+    .nav-link {
+        color: white;
+        margin: 0 20px;
 
-.nav-link {
-    color: white;
-    margin: 0 20px;
-    
-    &.active {
-        color: white !important;
+        &.active {
+            color: white !important;
+        }
     }
 }

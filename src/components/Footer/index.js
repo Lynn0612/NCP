@@ -9,7 +9,7 @@ import { Nav, Button } from 'react-bootstrap';
 
 const footer = () => {
   return (
-    <footer className="text-white py-4 desk-top-margin">
+    <footer id="footer">
       <Container className="footer-container">
         <Row className="full-width-row">
           <Col lg={4} md={3} xs={12}>
