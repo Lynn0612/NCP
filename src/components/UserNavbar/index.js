@@ -16,7 +16,7 @@ const UserNavbar = () => {
                         <Nav.Link href="#">Project</Nav.Link>
                         <Nav.Link href="#">Data Panels</Nav.Link>
                         <Nav.Link href="#">Subscription</Nav.Link>
-                        <Nav.Link href="#">News</Nav.Link>
+                        <Nav.Link href="/news">News</Nav.Link>
                         <Nav.Link href="#">Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
