@@ -58,11 +58,15 @@
 
   .footer-paragraph {
     @include media-breakpoint-down(md) {
-      padding: 0 50px 0 30px;
+      padding: 0 20px;
     }
   }
 
   .desk-top-margin {
     margin-top: 120px;
+  }
+
+  .footer-px{
+    padding: 0 20px;
   }
 }
