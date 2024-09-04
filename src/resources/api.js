@@ -4,6 +4,9 @@ export const getFaqs = () => {
 export const getNews = () => {
     return getData(`v1/news`);
 };
+export const getNewslist = () => {
+    return getData(`v1/news/list`);
+};
 export const getNewsContent = (slug) => {
     return getData(`v1/news/content`, {slug: slug});
 };

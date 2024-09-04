@@ -20,7 +20,7 @@ const UserNavbar = () => {
                         <Nav.Link href="#">Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
-                        <Button bsSize="xsmall" className="my-btn btn border-0 fw-bold px-3">CONTACT US</Button>
+                        <Button className="my-btn btn border-0 fw-bold px-3">CONTACT US</Button>
                     </ButtonToolbar>
                 </Navbar.Collapse>
             </Container>
