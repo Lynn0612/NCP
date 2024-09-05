@@ -3,50 +3,58 @@ import { Container, Button, Dropdown, DropdownButton } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { getCategories } from '@rsrc/api';
 
-export const NewsBtn = ({ setSelectedCategoryId, selectedCategoryId }) => {
+export const NewsBtn = ({ onChange }) => {
     const [data, setData] = useState([]);
+    const [cateId, setCateId] = useState(null);
+
     useEffect(() => {
         getCategories().then(json => {
             setData(json.data);
         });
     }, []);
-    const CategoryClick = (id) => {
-        setSelectedCategoryId(id);
+    const ddTitle = data.find(x => x.id == cateId)?.title;
+
+    const changeHandler = (id) => {
+        setCateId(id)
+        onChange(id)
     };
-    const showAllNews = () => {
-        setSelectedCategoryId(null);
-    };
-    const getCategoryTitle = (categoryId) => {
-        const category = data.find(item => item.id === categoryId);
-        return category ? category.title : 'All News';
-    };
-    const dropdownTitle = selectedCategoryId ? getCategoryTitle(selectedCategoryId) : 'All News';
+    
     return (
-        <Container id="news-btn" className="d-flex flex-column flex-sm-row">
-            <Button className={`news-btn mx-3 ${selectedCategoryId === null ? 'selected' : ''} d-none d-sm-block`}
-                onClick={showAllNews}>All News</Button>
-            <DropdownButton className="d-block d-sm-none news-btn" title={dropdownTitle}>
-                <Dropdown.Item
-                    onClick={showAllNews}
-                    active={selectedCategoryId === null}>All News
-                </Dropdown.Item>
-                {data.map((item) => (
-                    <Dropdown.Item
-                        key={item.id}
-                        onClick={() => CategoryClick(item.id)}
-                        active={selectedCategoryId === item.id}>{item.title}
-                    </Dropdown.Item>
-                ))}
-            </DropdownButton>
-            <div className="d-none d-sm-flex">
+        <div id="news-btn">
+
+            {/* desktop */}
+            <Container className="d-none d-lg-flex flex-column flex-lg-row">
+                <Button
+                    className={`news-btn mx-3 ${cateId ? '' : 'selected'}`}
+                    onClick={() => changeHandler(null)}
+                >
+                    All News
+                </Button>
                 {data.map((item) => (
                     <Button
                         key={item.id}
-                        className={`news-btn mx-3 ${selectedCategoryId === item.id ? 'selected' : ''}`}
-                        onClick={() => CategoryClick(item.id)}>{item.title}
+                        className={`news-btn mx-3 ${cateId === item.id ? 'selected' : ''}`}
+                        onClick={() => changeHandler(item.id)}>{item.title}
                     </Button>
                 ))}
-            </div>
-        </Container>
+            </Container>
+
+            {/* mobile */}
+            <Container className="d-flex d-lg-none flex-column flex-lg-row">
+                <DropdownButton className="news-btn" title={ddTitle ? ddTitle : 'All News'}>
+                    <Dropdown.Item
+                        onClick={() => changeHandler(null)}
+                        active={cateId === null}>All News
+                    </Dropdown.Item>
+                    {data.map((item) => (
+                        <Dropdown.Item
+                            key={item.id}
+                            onClick={() => changeHandler(item.id)}
+                            active={cateId === item.id}>{item.title}
+                        </Dropdown.Item>
+                    ))}
+                </DropdownButton>
+            </Container>
+        </div>
     );
 };
