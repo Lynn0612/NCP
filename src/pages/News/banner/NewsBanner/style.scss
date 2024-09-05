@@ -1,0 +1,60 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#news-banner {
+
+    .banner-area {
+        width: 100%;
+        height: 480px;
+        overflow: hidden;
+    }
+
+    .banner-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .banner-text {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: left;
+        padding: 20px;
+
+        @include media-breakpoint-down(sm) {
+            height: 100%;
+            width: 50%;
+            max-height: none;
+        }
+    }
+
+    .my-btn {
+        color: white;
+        background-color: var(--ncp-highlight);
+        font-size: 16px;
+
+        &:hover {
+            background-color: var(--ncp-highlight);
+            color: white;
+        }
+
+        &:active {
+            background-color: var(--ncp-highlight) !important;
+            color: white !important;
+            filter: brightness(85%);
+        }
+    }
+
+    h1 {
+        font-weight: 800;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
