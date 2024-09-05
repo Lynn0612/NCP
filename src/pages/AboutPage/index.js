@@ -3,7 +3,7 @@ import "./style.scss"
 import { AboutBanner } from './banner';
 import { AboutArticle } from './article';
 import { AboutArticle1 } from './article';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 const AboutPage = () => (
     <>

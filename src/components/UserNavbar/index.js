@@ -16,11 +16,11 @@ const UserNavbar = () => {
                         <Nav.Link href="#">Project</Nav.Link>
                         <Nav.Link href="#">Data Panels</Nav.Link>
                         <Nav.Link href="#">Subscription</Nav.Link>
-                        <Nav.Link href="#">News</Nav.Link>
+                        <Nav.Link href="/news">News</Nav.Link>
                         <Nav.Link href="#">Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
-                        <Button bsSize="xsmall" className="my-btn btn border-0 fw-bold px-3">CONTACT US</Button>
+                        <Button className="my-btn btn border-0 fw-bold px-3">CONTACT US</Button>
                     </ButtonToolbar>
                 </Navbar.Collapse>
             </Container>
