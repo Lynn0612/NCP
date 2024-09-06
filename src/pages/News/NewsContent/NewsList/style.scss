@@ -2,7 +2,7 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-#news-list{
+#news-list {
 
     .desk-margin {
         margin: 60px 0;
@@ -14,6 +14,7 @@
 
     .news-img {
         border-radius: 10px 0 0 10px;
+
         @include media-breakpoint-down(md) {
             border-radius: 10px 10px 0 0;
         }
@@ -26,7 +27,7 @@
     }
 
     .news-clock {
-        color: var(--ncp-gray-4) ;
+        color: var(--ncp-gray-4);
         width: 14px;
         height: 14px;
         padding: 2px 0;
@@ -34,18 +35,18 @@
     }
 
     .news-icon {
-        color: var(--ncp-gray-4) ;
+        color: var(--ncp-gray-4);
         padding: 2px 0;
         margin: 0 4px;
     }
 
     div>span {
-        color: var(--ncp-gray-4) ;
+        color: var(--ncp-gray-4);
         padding: 2px 0;
         margin: 0 4px;
     }
 
-    .news-p{
+    .news-p {
         padding-right: 24px;
         font-size: 16px;
         margin-top: 20px;
@@ -68,18 +69,47 @@
         color: var(--ncp-state-info);
         text-align: center;
         align-self: flex-start;
-    
+
         &:hover {
-          background-color: transparent;
-          border: none;
-          color: var(--ncp-state-info);
+            background-color: transparent;
+            border: none;
+            color: var(--ncp-state-info);
         }
-    
+
         &:active {
-          background-color: transparent !important;
-          color: var(--ncp-state-info) !important;
-          filter: brightness(85%);
-          border: none !important;
+            background-color: transparent !important;
+            color: var(--ncp-state-info) !important;
+            filter: brightness(85%);
+            border: none !important;
         }
-      }
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+
+        .pagination {
+            display: flex;
+            align-items: center;
+
+            .page-item {
+                padding: 12px 0;
+
+                .page-link {
+                    cursor: pointer;
+                    font-size: 24px;
+                    color: var(--ncp-black-1);
+                    border: none;
+                    background-color: transparent;
+                }
+
+                &.active .page-link {
+                    background-color: transparent;
+                    color: var(--ncp-highlight);
+                    border: none;
+                }
+            }
+        }
+    }
 }

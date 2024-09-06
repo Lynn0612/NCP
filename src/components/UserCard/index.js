@@ -12,6 +12,7 @@ const UserCard = () => {
             setData(json.data); 
         })
     }, []);
+    const limitedData = data.slice(0, 3);
     return (
         <div className="desk-margin" id="home-card">
             <div className="d-flex justify-content-between">
@@ -26,7 +27,7 @@ const UserCard = () => {
             </div>
             <hr className="hr hr-margin"></hr>
             <div className="d-flex justify-content-around">
-                {data.map((item, index) => (
+                {limitedData.map((item, index) => (
                 <Card className="shadow border-0" style={{ width: "410.67px" }} key={index}>
                     <Card.Img variant="top" src={item.cover_url} />
                     <Card.Body className="p-0 rounded card-body">
