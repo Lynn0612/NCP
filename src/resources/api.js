@@ -4,11 +4,18 @@ export const getFaqs = () => {
 export const getNews = () => {
     return getData(`v1/news`);
 };
-export const getNewslist = (page = 1, pageSize = 10) => {
-    return getData(`v1/news/list`, { page, page_size: pageSize });
+export const getNewslist = (page = 1, pageSize = 10, cateId = null) => {
+    const params = {
+        page,
+        page_size: pageSize
+    };
+    if (cateId !== null) {
+        params.category_id = cateId;
+    }
+    return getData('v1/news/list', params);
 };
 export const getNewsContent = (slug) => {
-    return getData(`v1/news/content`, {slug: slug});
+    return getData(`v1/news/content`, { slug: slug });
 };
 export const getCategories = () => {
     return getData(`v1/categories`);

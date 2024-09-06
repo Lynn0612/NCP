@@ -5,6 +5,8 @@ import icon from './newslisticon.png';
 import React, { useEffect, useState } from 'react';
 import { getNewslist, getCategories } from '@rsrc/api';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
+
 
 export const NewsList = ({ selectedCategoryId }) => {
     const [newsData, setNewsData] = useState([]);
@@ -13,21 +15,23 @@ export const NewsList = ({ selectedCategoryId }) => {
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
-        const fetchData = () => {
-            getNewslist(currentPage, 10)
-                .then(response => {
-                    setNewsData(response.data);
-                    setTotalPages(response.pagination.total_page); 
-                })
-        };
-        fetchData();
-    }, [currentPage]);
+        getNewslist(currentPage, 10, selectedCategoryId)
+            .then(response => {
+                setNewsData(response.data);
+                setTotalPages(response.pagination.total_page);
+            });
+    }, [currentPage, selectedCategoryId]);
 
     useEffect(() => {
-        getCategories().then(json => {
-            setCategories(json.data);
-        });
+        getCategories()
+            .then(json => {
+                setCategories(json.data);
+            });
     }, []);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedCategoryId]);
 
     const filteredNews = selectedCategoryId
         ? newsData.filter(news => news.category_id === selectedCategoryId)
@@ -58,7 +62,9 @@ export const NewsList = ({ selectedCategoryId }) => {
                             <span>{getCategoryTitle(item.category_id)}</span>
                         </div>
                         <p className="news-p">{item.summary}</p>
-                        <Button className="news-btn ms-auto d-block">read more</Button>
+                        <Link to={`/news/article/${item.slug}`} className="text-decoration-none">
+                            <Button className="news-btn ms-auto d-block">read more</Button>
+                        </Link>
                     </Col>
                 </Row>
             ))}
