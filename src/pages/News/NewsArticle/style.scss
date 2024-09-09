@@ -1,0 +1,23 @@
+#news-article {
+
+    .news-margin {
+        margin: 40px 0;
+    }
+
+    .news-padding {
+        width: 400px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    a {
+        color: var(--ncp-state-info);
+    }
+
+    hr {
+        border: 1px solid var(--ncp-black-1);
+    }
+    
+}

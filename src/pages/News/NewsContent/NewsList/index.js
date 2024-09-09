@@ -33,10 +33,6 @@ export const NewsList = ({ selectedCategoryId }) => {
         setCurrentPage(1);
     }, [selectedCategoryId]);
 
-    const filteredNews = selectedCategoryId
-        ? newsData.filter(news => news.category_id === selectedCategoryId)
-        : newsData;
-
     const getCategoryTitle = (categoryId) => {
         const category = categories.find(cat => cat.id === categoryId);
         return category ? category.title : " ";
@@ -48,7 +44,7 @@ export const NewsList = ({ selectedCategoryId }) => {
 
     return (
         <Container id="news-list">
-            {filteredNews.map(item => (
+            {newsData.map(item => (
                 <Row className="desk-margin" key={item.id}>
                     <Col lg={6} className="news-pic">
                         <Image src={item.cover_url} className="w-100 news-img" />
@@ -62,7 +58,7 @@ export const NewsList = ({ selectedCategoryId }) => {
                             <span>{getCategoryTitle(item.category_id)}</span>
                         </div>
                         <p className="news-p">{item.summary}</p>
-                        <Link to={`/news/article/${item.slug}`} className="text-decoration-none">
+                        <Link to={`/news/${item.slug}`} className="text-decoration-none">
                             <Button className="news-btn ms-auto d-block">read more</Button>
                         </Link>
                     </Col>

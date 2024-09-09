@@ -1,43 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import "./style.scss";
-import { Container, Row, Col, Image, Breadcrumb } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'; 
-import { getNewsContent } from '@rsrc/api'; 
+import { useParams } from 'react-router-dom';
+import { getNewsContent } from '@rsrc/api';
 import { NewsBanner } from "../banner";
+import { Container, Row, Col, Breadcrumb } from 'react-bootstrap';
+import UserCard from 'src/components/UserCard';
+
 
 const NewsArticle = () => {
-    const { slug } = useParams(); 
+    const { slug } = useParams();
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
         if (slug) {
             getNewsContent(slug).then(response => {
-                setArticle(response.data); 
+                setArticle(response.data);
             }).catch(error => {
                 console.error("Failed to fetch article content:", error);
             });
         }
     }, [slug]);
+
+    if (!article) return null;
+
     return (
         <>
-        <NewsBanner />
-        <Container>
-            <Breadcrumb>
-                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                <Breadcrumb.Item href="/news">News</Breadcrumb.Item>
-                <Breadcrumb.Item active>{article.title}</Breadcrumb.Item>
+            <NewsBanner
+                newsbanner={article.cover_url}
+                title={article.title}
+                description={article.description}
+            />
+            <Breadcrumb  fluid>
+                <div className="d-flex news-bread">
+                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                    <span className="mx-3">{' > '}</span>
+                    <Breadcrumb.Item href="/news">
+                        News
+                    </Breadcrumb.Item>
+                    <span className="mx-3">{' > '}</span>
+                    <Breadcrumb.Item>
+                        {article.title}
+                    </Breadcrumb.Item>
+                </div>
             </Breadcrumb>
-            <Row>
-                <Col md={12}>
-                    <h1>{article.title}</h1>           
-                    {article.cover_url && (
-                        <Image src={article.cover_url} fluid alt={article.title} />
-                    )}
-                    <div dangerouslySetInnerHTML={{ __html: article.content }} />
-                </Col>
-            </Row>
-        </Container>
+            <Container id="news-article" className="p-0">
+                <Row className="news-margin p-0">
+                    <Col md={8} className="p-0">
+                        <h1>{article.title}</h1>
+                        <div className="news-margin news-padding" dangerouslySetInnerHTML={{ __html: article.content }} />
+                    </Col>
+                </Row>
+                <UserCard/>
+            </Container>
         </>
     );
 };
+
 export default NewsArticle;
