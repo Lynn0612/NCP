@@ -19,7 +19,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="news" element={<News />} />
-        <Route path="news/article/:slug" element={<NewsArticle />} />
+        <Route path="news/:slug" element={<NewsArticle />} />
       </Routes>
       <Footer />
     </BrowserRouter>

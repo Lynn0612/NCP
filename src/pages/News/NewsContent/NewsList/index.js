@@ -58,7 +58,7 @@ export const NewsList = ({ selectedCategoryId }) => {
                             <span>{getCategoryTitle(item.category_id)}</span>
                         </div>
                         <p className="news-p">{item.summary}</p>
-                        <Link to={`/news/article/${item.slug}`} className="text-decoration-none">
+                        <Link to={`/news/${item.slug}`} className="text-decoration-none">
                             <Button className="news-btn ms-auto d-block">read more</Button>
                         </Link>
                     </Col>
