@@ -16,7 +16,7 @@ const footer = () => {
             <Image src={footerlogo} className="footer-logo" />
           </Col>
           <Col lg={2} md={3} xs={6} className="footer-px">
-            <Nav.Link href="#" className="footer-link ">About Us</Nav.Link>
+            <Nav.Link href="/about" className="footer-link ">About Us</Nav.Link>
             <Nav.Link href="#" className="footer-link">FAQs</Nav.Link>
             <Nav.Link href="#" className="footer-link">Privacy Policy</Nav.Link>
             <Nav.Link href="#" className="footer-link">Terms and conditions</Nav.Link>
@@ -25,7 +25,7 @@ const footer = () => {
             <Nav.Link href="#" className="footer-link">Products</Nav.Link>
             <Nav.Link href="#" className="footer-link">Data Panels</Nav.Link>
             <Nav.Link href="#" className="footer-link">ubscription</Nav.Link>
-            <Nav.Link href="#" className="footer-link">News</Nav.Link>
+            <Nav.Link href="/news" className="footer-link">News</Nav.Link>
             <Nav.Link href="#" className="footer-link">Blog</Nav.Link>
           </Col>
           <Col lg={4} md={3} xs={12} className="footer-paragraph">

@@ -28,9 +28,7 @@ const News = () => {
                 <div className="d-flex news-bread">
                     <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                     <span className="mx-3">{' > '}</span>
-                    <Breadcrumb.Item href="/news">
-                        News
-                    </Breadcrumb.Item>
+                        <span className="breadcrumb-color">News</span>
                 </div>
             </Breadcrumb>
             <Container>

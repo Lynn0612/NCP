@@ -52,6 +52,8 @@
 
     .card-body {
         background-color: var(--ncp-bg-3);
+        height: 306px;
+        position: relative; 
     }
 
     .text-truncate-multiline {
@@ -90,5 +92,36 @@
 
     .hr-margin {
         margin: 24px 0;
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        height: 31vh;
+    }
+
+    .button-wrapper {
+        position: absolute;
+        bottom: 16px;
+        width: 100%; 
+        left: 0;
+        display: flex;
+        justify-content: center; 
+    }
+
+    .btn-link {
+        width: 370px;
+
+        @media (max-width: 1024px) { 
+            width: 290px;
+        }
+    }
+    
+    .card-title{
+        color: var(--ncp-secondary);
+        margin-top: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
