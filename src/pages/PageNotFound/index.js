@@ -3,10 +3,11 @@ import "./style.scss";
 import Image from 'react-bootstrap/Image';
 import pagenotfoundimg from './bg404.png';
 import pagenotfound404 from './404.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; 
 import { Button } from 'react-bootstrap';
 
 const PageNotFound = () => {
+    const navigate = useNavigate(); 
     useEffect(() => {
       const footer = document.getElementById('footer');
       if (footer) {
@@ -20,6 +21,14 @@ const PageNotFound = () => {
       };
     }, []);
 
+    const NotfoundChange = (page) => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        navigate(page);
+    };
+
     return (
         <div id="pagenotfound" className="page-not-found">
             <Image src={pagenotfoundimg} className="w-100 pnfimg"/>
@@ -31,7 +40,7 @@ const PageNotFound = () => {
                     </div>
                     <div >
                         <Link to="/" className="text-decoration-none btn-link">
-                            <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">
+                            <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center" onClick={() => NotfoundChange('/')}>
                                 Home Page
                             </Button>
                         </Link>

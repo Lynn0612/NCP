@@ -58,6 +58,7 @@
     .pnf-title {
         font-size: 64px;
         font-weight: 800;
+        color: #1A1C16;
 
         @include media-breakpoint-down(md) {
             font-size: 32px;
@@ -67,6 +68,7 @@
     .pnf-p {
         font-size: 20px;
         text-align: center;
+        color: var(--ncp-black-1);
 
         @include media-breakpoint-down(md) {
             font-size: 14px;
