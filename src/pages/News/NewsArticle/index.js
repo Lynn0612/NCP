@@ -38,9 +38,7 @@ const NewsArticle = () => {
                         News
                     </Breadcrumb.Item>
                     <span className="mx-3">{' > '}</span>
-                    <Breadcrumb.Item>
-                        {article.title}
-                    </Breadcrumb.Item>
+                    <span className="breadcrumb-color">{article.title}</span>
                 </div>
             </Breadcrumb>
             <Container id="news-article" className="p-0">

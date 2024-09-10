@@ -14,6 +14,8 @@
 
     .news-img {
         border-radius: 10px 0 0 10px;
+        object-fit: cover;
+        height: 276px;
 
         @include media-breakpoint-down(md) {
             border-radius: 10px 10px 0 0;
@@ -24,6 +26,11 @@
         color: var(--ncp-secondary);
         font-size: 32px;
         margin: 0;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
     .news-clock {
@@ -50,7 +57,13 @@
         padding-right: 24px;
         font-size: 16px;
         margin-top: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin: 1px 0;
     }
+    
 
     .news-bg {
         background-color: var(--ncp-bg-4);
@@ -59,10 +72,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 276px;
     }
 
     .news-btn {
-        margin-top: 40px;
         font-size: 14px;
         background-color: transparent;
         border: none;

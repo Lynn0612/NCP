@@ -46,9 +46,11 @@ const UserCard = () => {
                                 <Card.Text className="text-truncate-multiline m-0 card-text">
                                     {item.summary}
                                 </Card.Text>
-                                <Link to={`/news/${item.slug}`} className="text-decoration-none">
-                                    <Button className="my-btn btn border-0 fw-bold px-3 my-5 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>
+                                <div className="button-wrapper">
+                                <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
+                                    <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>
                                 </Link>
+                                </div>
                             </div>
                         </Card.Body>
                     </Card>
@@ -73,11 +75,13 @@ const UserCard = () => {
                                     <Card.Text className="text-truncate-multiline m-0 card-text">
                                         {item.summary}
                                     </Card.Text>
-                                    <Link to={`/news/${item.slug}`} className="text-decoration-none">
-                                        <Button className="my-btn btn border-0 fw-bold px-3 my-5 w-100 d-flex justify-content-center align-items-center">
+                                    <div className="button-wrapper">
+                                    <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
+                                        <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">
                                             READ MORE
                                         </Button>
                                     </Link>
+                                    </div>
                                 </div>
                             </Card.Body>
                         </Card>

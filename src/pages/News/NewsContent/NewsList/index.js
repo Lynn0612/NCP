@@ -40,8 +40,12 @@ export const NewsList = ({ selectedCategoryId }) => {
 
     const PageChange = (page) => {
         setCurrentPage(page);
+        window.scrollTo({
+            top: 0, 
+            behavior: 'smooth' 
+        });
     };
-
+    
     return (
         <Container id="news-list">
             {newsData.map(item => (
