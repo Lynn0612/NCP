@@ -4,13 +4,11 @@ import 'bootstrap-icons/font/bootstrap-icons.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, AboutPage, News } from './pages';
+import { HomePage, AboutPage, News, FaqPage, PrivacyPage } from './pages';
 import { UserNavbar } from '@/components';
 import { Footer } from '@/components';
 import NewsArticle from './pages/News/NewsArticle';
 import PageNotFound from './pages/PageNotFound';
-
-
 
 function App() {
   return (
@@ -22,6 +20,8 @@ function App() {
         <Route path="news" element={<News />} />
         <Route path="news/:slug" element={<NewsArticle />} />
         <Route path="404" element={<PageNotFound />} />
+        <Route path="faq" element={<FaqPage />} />
+        <Route path="privacy" element={<PrivacyPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

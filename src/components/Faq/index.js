@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFaqs } from '@rsrc/api';
 import "./style.scss"
+import { Link } from 'react-router-dom';
 
 const Faq = () => {
     const [data, setData] = useState([]);
@@ -9,12 +10,22 @@ const Faq = () => {
             setData(json.data);
         })
     }, []);
+
+    const FaqChange = (page) => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <div className="faq my-5" id="home-faq">
             <div>
                 <p className="fw-bold title-fs m-0">FAQ</p>
                 <span className="py-2 d-flex justify-content-between align-items-center title-sm-fs">Frequently Asked Questions
-                    <span className="d-flex justify-content-between more"> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                <Link to={`/Faq/`} className="text-decoration-none">
+                <span className="d-flex justify-content-between more" onClick={() => FaqChange('/Faq')}> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                        </Link>                    
                 </span>
             </div>
             <hr className="hr"></hr>
