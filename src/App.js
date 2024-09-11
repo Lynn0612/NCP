@@ -8,6 +8,7 @@ import { HomePage, AboutPage, News } from './pages';
 import { UserNavbar } from '@/components';
 import { Footer } from '@/components';
 import NewsArticle from './pages/News/NewsArticle';
+import PageNotFound from './pages/PageNotFound';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="news" element={<News />} />
         <Route path="news/:slug" element={<NewsArticle />} />
+        <Route path="404" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
