@@ -19,7 +19,7 @@ const footer = () => {
             <Nav.Link href="/about" className="footer-link ">About Us</Nav.Link>
             <Nav.Link href="/Faq" className="footer-link">FAQs</Nav.Link>
             <Nav.Link href="/privacy" className="footer-link">Privacy Policy</Nav.Link>
-            <Nav.Link href="#" className="footer-link">Terms and conditions</Nav.Link>
+            <Nav.Link href="/terms" className="footer-link">Terms and conditions</Nav.Link>
           </Col>
           <Col lg={2} md={3} xs={6} className="footer-px">
             <Nav.Link href="#" className="footer-link">Products</Nav.Link>

@@ -7,7 +7,7 @@ const PrivacyPage = () => {
     return (
         <Container id="privacypage">
             <h1 className="fw-bold">Privacy Policy</h1>
-            <div className="my-3">
+            <div className="my-3 lastupdated">
                 <span>Last Updated:</span><span className="last-updated">[Insert Date]</span>
             </div>
             <div className="article">
@@ -17,7 +17,7 @@ const PrivacyPage = () => {
                         <p className="content">The Napital Group ("we," "us," "our") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website. By accessing or using our website, you agree to the collection and use of your information in accordance with this policy. If you do not agree with the terms of this policy, please do not use our website.</p>
                     </li>
                     <li>
-                        <p className="title">Information We Collect</p>
+                        <p className="title fw-bold">Information We Collect</p>
                         <p className="section-title fw-bold">2.1 Personal Information</p>
                         <p className="content">We may collect personal information that you voluntarily provide to us when you register on our site, subscribe to our newsletter, fill out a form, or engage in other activities on our site. This information may include your name, email address, phone number, and any other details you choose to provide.</p>
                         <p className="section-title fw-bold">2.2 Non-Personal Information</p>
