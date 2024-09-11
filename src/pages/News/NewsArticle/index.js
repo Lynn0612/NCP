@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./style.scss";
 import { useParams, useNavigate } from 'react-router-dom';
 import { getNewsContent } from '@rsrc/api';
-import { NewsBanner } from "../banner";
+import { NewsBanner } from '../banner/NewsBanner';
 import { Container, Row, Col, Breadcrumb } from 'react-bootstrap';
 import UserCard from 'src/components/UserCard';
 
