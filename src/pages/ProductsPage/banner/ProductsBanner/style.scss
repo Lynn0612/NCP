@@ -1,0 +1,44 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#productsbanner {
+
+    background-color: var(--ncp-secondary);
+
+    .products-img {
+
+        @include media-breakpoint-down(md) {
+            justify-content: center !important;
+            align-items: center !important;
+        }
+    }
+
+    .productsimg {
+        margin-right: 40px;
+
+        @include media-breakpoint-down(md) {
+            margin-right: 0;
+        }
+    }
+
+    .products-content {
+        width: 680px;
+    }
+
+    .title {
+        color: var(--ncp-white);
+        font-size: 48px;
+    }
+
+    .content {
+        color: var(--ncp-white);
+        font-size: 20px;
+    }
+
+    .products-padding {
+        padding: 60px;
+        justify-content: center;
+        align-items: center;
+    }
+}
