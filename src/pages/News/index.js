@@ -3,7 +3,7 @@ import "./style.scss";
 import { Container } from 'react-bootstrap';
 import { NewsList } from "./NewsContent";
 import { NewsBtn } from "./NewsContent";
-import { NewsBanner } from "./banner";
+import { NewsBanner } from './banner/NewsBanner';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import newsbannerimg from './banner/NewsBanner/newsbanner.png';
 

@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import "./style.scss";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getNewsContent } from '@rsrc/api';
-import { NewsBanner } from "../banner";
+import { NewsBanner } from '../banner/NewsBanner';
 import { Container, Row, Col, Breadcrumb } from 'react-bootstrap';
 import UserCard from 'src/components/UserCard';
-
 
 const NewsArticle = () => {
     const { slug } = useParams();
     const [article, setArticle] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (slug) {
-            getNewsContent(slug).then(response => {
-                setArticle(response.data);
-            }).catch(error => {
-                console.error("Failed to fetch article content:", error);
-            });
+          getNewsContent(slug).then(response => {
+            if (response.data) {
+              setArticle(response.data);
+            } else {
+              navigate('/404');
+            }
+          });
         }
-    }, [slug]);
+      }, [slug, navigate]);
 
     if (!article) return null;
 
