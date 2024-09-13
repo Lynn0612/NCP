@@ -22,9 +22,9 @@ const footer = () => {
             <Nav.Link href="/terms" className="footer-link">Terms and conditions</Nav.Link>
           </Col>
           <Col lg={2} md={3} xs={6} className="footer-px">
-            <Nav.Link href="/products" className="footer-link">Products</Nav.Link>
+            <Nav.Link href="/project" className="footer-link">Project</Nav.Link>
             <Nav.Link href="#" className="footer-link">Data Panels</Nav.Link>
-            <Nav.Link href="#" className="footer-link">ubscription</Nav.Link>
+            <Nav.Link href="#" className="footer-link">Subscription</Nav.Link>
             <Nav.Link href="/news" className="footer-link">News</Nav.Link>
             <Nav.Link href="#" className="footer-link">Blog</Nav.Link>
           </Col>
