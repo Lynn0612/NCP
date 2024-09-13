@@ -2,11 +2,11 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-#productsbanner {
+#projectbanner {
 
     background-color: var(--ncp-secondary);
 
-    .products-img {
+    .project-img {
 
         @include media-breakpoint-down(md) {
             justify-content: center !important;
@@ -14,7 +14,7 @@
         }
     }
 
-    .productsimg {
+    .projectimg {
         margin-right: 40px;
 
         @include media-breakpoint-down(md) {
@@ -22,7 +22,7 @@
         }
     }
 
-    .products-content {
+    .project-content {
         width: 680px;
     }
 
@@ -36,7 +36,7 @@
         font-size: 20px;
     }
 
-    .products-padding {
+    .project-padding {
         padding: 60px;
         justify-content: center;
         align-items: center;

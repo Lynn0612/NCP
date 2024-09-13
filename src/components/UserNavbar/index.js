@@ -13,7 +13,7 @@ const UserNavbar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link href="/about">About Us</Nav.Link>
-                        <Nav.Link href="#">Project</Nav.Link>
+                        <Nav.Link href="/project">Project</Nav.Link>
                         <Nav.Link href="#">Data Panels</Nav.Link>
                         <Nav.Link href="#">Subscription</Nav.Link>
                         <Nav.Link href="/news">News</Nav.Link>

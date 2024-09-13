@@ -9,7 +9,7 @@ import { UserNavbar } from '@/components';
 import { Footer } from '@/components';
 import NewsArticle from './pages/News/NewsArticle';
 import PageNotFound from './pages/PageNotFound';
-import  ProductsPage from './pages/ProductsPage';
+import  ProjectPage from './pages/ProjectPage';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Route path="faq" element={<FaqPage />} />
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="terms" element={<TermsPage />} />
-        <Route path="products" element={<ProductsPage />} />
+        <Route path="project" element={<ProjectPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
