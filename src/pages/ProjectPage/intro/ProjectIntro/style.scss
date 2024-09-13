@@ -1,0 +1,94 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#projectintro {
+
+    background-color: var(--ncp-bg-1);
+    position: relative;
+
+    .content {
+        margin: auto;
+        width: 1280px;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+
+    .intro-content {
+        margin: auto;
+        width: 1280px;
+        padding: 12px 40px;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+
+    .title {
+        font-size: 36px;
+        padding-top: 60px;
+        margin: 0;
+    }
+
+    .hr {
+        border: 1px solid var(--ncp-black-1);
+        margin: 24px 0;
+    }
+
+    .intro {
+        margin: auto;
+        width: 1280px;
+        padding: 24px 40px;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+
+    .intro-btn {
+        margin-top: 40px;
+        font-size: 16px;
+        background-color: transparent;
+        border: 1px solid var(--ncp-black-1);
+        color: var(--ncp-black-1);
+        text-align: center;
+        padding: 12px;
+        border-radius: 10px;
+        margin: 0 12px;
+        width: 30%;
+      
+        &:hover {
+          background-color: var(--ncp-secondary);
+          color: var(--ncp-white);
+        }
+      
+        &:active {
+          background-color: var(--ncp-secondary);
+          color: var(--ncp-white);
+        }
+      
+        &:focus {
+          background-color: var(--ncp-secondary);
+          color: var(--ncp-white);
+        }
+    }
+    
+    .introimg {
+        margin-right: 80px;
+      }
+
+    .introtitle {
+        font-size: 32px;
+        margin-top: 12px;
+    }
+
+    .intro-title {
+        font-size: 20px;
+        color: var(--ncp-gray-3);
+        margin: 24px 0;
+    }
+    
+    .introcontent {
+        font-size: 16px;
+    }
+}
