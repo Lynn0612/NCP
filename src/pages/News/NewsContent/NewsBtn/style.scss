@@ -37,6 +37,11 @@
     }
   }
 
+  .dropdown {
+    width: 102%;
+    left: -3px;
+  }
+
   .dropdown-toggle {
     background-color: transparent !important;
     border: none;
@@ -46,7 +51,7 @@
   }
 
   .dropdown-menu {
-    background-color: var(--ncp-bg-4);
+    border: 1px solid;
     width: 100%;
     transform: none !important;
     margin-top: 48px;

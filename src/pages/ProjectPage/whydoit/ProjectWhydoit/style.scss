@@ -8,10 +8,11 @@
     position: relative;
 
     .content {
-        padding:0 500px;
+        width: 1280px;
+        margin: auto;
         
         @include media-breakpoint-down(md) {
-            padding: 0;
+            width: 100%;
         }
     }
 
@@ -31,8 +32,6 @@
         align-items: center;
 
         img {
-            width: 91.2px;
-            height: 85.95px;
 
             @include media-breakpoint-down(sm) {
                 margin-top: 40px;
@@ -79,7 +78,7 @@
         transform: translate(-50%, -50%);
         color: white;
         text-align: left;
-        width: 960px;
+        width: 1280px;
         font-size: 24px;
 
         @include media-breakpoint-down(sm) {
