@@ -21,7 +21,7 @@ const ModalWindow = () => {
         <Container id='modalwindow'>
             <Row className='modalmargin'>
                 {modalwindowData.map((item, index) => (
-                    <Col md={3} xs={6} sm={4} className='position-relative mb-4' key={index}>
+                    <Col md={3} xs={6} sm={4} className='position-relative mb-4 modalcol' key={index}>
                         <div className='image-container'>
                             <Image src={item.image} className='shadowed-image' />
                             <div className='image-overlay'>
