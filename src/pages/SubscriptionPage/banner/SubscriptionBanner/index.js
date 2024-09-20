@@ -7,8 +7,7 @@ import Row from 'react-bootstrap/Row';
 import banner from './subscriptionbanner.png';
 import { Button } from 'react-bootstrap';
 
-
-const SubscriptionBanner = () => {
+export const SubscriptionBanner = () => {
     
     return (
         <>
@@ -26,5 +25,3 @@ const SubscriptionBanner = () => {
         </>
     );
 };
-
-export default SubscriptionBanner;
