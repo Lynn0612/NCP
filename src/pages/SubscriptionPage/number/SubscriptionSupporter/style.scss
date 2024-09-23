@@ -1,0 +1,25 @@
+#subscriptionsupporter {
+
+    .title {
+        font-size: 24px;
+        text-align: center;
+        padding: 12px 0;
+        background: var(--ncp-secondary);
+        color: var(--ncp-white);
+    }
+
+    .supporter {
+        padding: 60px 0;
+
+        h1 {
+            color: var(--ncp-state-warning);
+            margin: 0;
+        }
+
+        p {
+            color: var(--ncp-black-1);
+            padding-top: 20px;
+            margin: 0;
+        }
+    }
+}
