@@ -6,16 +6,24 @@
 
     background-color: var(--ncp-secondary);
 
+    .project {
+        @include media-breakpoint-down(md) {
+            padding: 40px 20px;
+         }
+    }
+
     .project-img {
 
         @include media-breakpoint-down(md) {
             justify-content: center !important;
             align-items: center !important;
+            padding: 0;
         }
     }
 
     .projectimg {
         margin-right: 40px;
+        max-width: 100%;
 
         @include media-breakpoint-down(md) {
             margin-right: 0;
@@ -40,5 +48,9 @@
         padding: 60px;
         justify-content: center;
         align-items: center;
+
+        @include media-breakpoint-down(md) {
+            padding: 0;
+        }
     }
 }

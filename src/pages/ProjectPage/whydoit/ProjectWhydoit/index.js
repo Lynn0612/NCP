@@ -44,7 +44,7 @@ export const ProjectWhydoit = () => {
                     </div>
                 </Col>
             </Row>
-                <Row>
+                <Row className="w-100 m-0">
                     <Col xs={8} className="project-area px-0 position-relative">
                         <Image src={whydoit} className="project-cover" />
                         <Col xs={4} className="project-content">

@@ -10,6 +10,7 @@ import { Footer } from '@/components';
 import NewsArticle from './pages/News/NewsArticle';
 import PageNotFound from './pages/PageNotFound';
 import  ProjectPage from './pages/ProjectPage';
+import  SubscriptionPage from './pages/SubscriptionPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="terms" element={<TermsPage />} />
         <Route path="project" element={<ProjectPage />} />
+        <Route path="subscription" element={<SubscriptionPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

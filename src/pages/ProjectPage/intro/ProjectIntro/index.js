@@ -43,7 +43,7 @@ export const ProjectIntro = () => {
                     <hr className="hr"></hr>
                 </Col>
             </Row>
-            <Row>
+            <Row className="m-0">
                 <Col xs={12} className="intro-content d-flex justify-content-center">
                     {introData.map((item, index) => (
                         <Button

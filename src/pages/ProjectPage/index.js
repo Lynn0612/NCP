@@ -3,6 +3,8 @@ import "./style.scss";
 import { ProjectBanner } from "./banner/ProjectBanner";
 import { ProjectWhydoit } from "./whydoit/ProjectWhydoit";
 import { ProjectIntro } from "./intro/ProjectIntro";
+import { ProjectContent } from "./content/ProjectContent";
+import { ProjectCard } from "./card/ProjectCard";
 
 const ProjectPage = () => {
 
@@ -10,7 +12,9 @@ const ProjectPage = () => {
         <>
             <ProjectBanner />
             <ProjectIntro />
+            <ProjectContent />
             <ProjectWhydoit />
+            <ProjectCard />
         </>
     );
 };
