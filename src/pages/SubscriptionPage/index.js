@@ -3,6 +3,7 @@ import "./style.scss";
 import { SubscriptionBanner } from './banner/SubscriptionBanner';
 import { SubscriptionContent } from './content/SubscriptionContent';
 import { SubscriptionSupporter } from './number/SubscriptionSupporter';
+import { SubscriptionCard } from './card/SubscriptionCard';
 
 
 
@@ -12,6 +13,7 @@ const SubscriptionPage = () => {
         <>
             <SubscriptionBanner />
             <SubscriptionSupporter />
+            <SubscriptionCard />
             <SubscriptionContent />
         </>
     );
