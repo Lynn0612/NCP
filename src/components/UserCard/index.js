@@ -47,47 +47,49 @@ const UserCard = () => {
                                     {item.summary}
                                 </Card.Text>
                                 <div className="button-wrapper">
-                                <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
-                                    <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>
-                                </Link>
+                                    <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
+                                        <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>
+                                    </Link>
                                 </div>
                             </div>
                         </Card.Body>
                     </Card>
                 ))}
             </div>
-            <Carousel className="d-md-none" controls={false} indicators={false}>
-                {limitedData.map((item, index) => (
-                    <Carousel.Item key={index}>
-                        <Card className="shadow border-0" style={{ width: '330px' }} key={index}>
-                            <Card.Img variant="top" src={item.cover_url} />
-                            <Card.Body className="p-0 rounded card-body">
-                                <Table striped className="card-table">
-                                    <thead>
-                                        <tr>
-                                            <th>{moment(item.posted_at).format('MM-DD-YYYY')}</th>
-                                            <th>{item.category}</th>
-                                        </tr>
-                                    </thead>
-                                </Table>
-                                <div className="m-4">
-                                    <Card.Title className="fw-bold">{item.title}</Card.Title>
-                                    <Card.Text className="text-truncate-multiline m-0 card-text">
-                                        {item.summary}
-                                    </Card.Text>
-                                    <div className="button-wrapper">
-                                    <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
-                                        <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">
-                                            READ MORE
-                                        </Button>
-                                    </Link>
+            <div className="carousel-container">
+                <Carousel className="d-md-none" controls={false} indicators={false}>
+                    {limitedData.map((item, index) => (
+                        <Carousel.Item key={index}>
+                            <Card className="shadow border-0" style={{ width: '330px' }} key={index}>
+                                <Card.Img variant="top" src={item.cover_url} />
+                                <Card.Body className="p-0 rounded card-body">
+                                    <Table striped className="card-table">
+                                        <thead>
+                                            <tr>
+                                                <th>{moment(item.posted_at).format('MM-DD-YYYY')}</th>
+                                                <th>{item.category}</th>
+                                            </tr>
+                                        </thead>
+                                    </Table>
+                                    <div className="m-4">
+                                        <Card.Title className="fw-bold">{item.title}</Card.Title>
+                                        <Card.Text className="text-truncate-multiline m-0 card-text">
+                                            {item.summary}
+                                        </Card.Text>
+                                        <div className="button-wrapper">
+                                            <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
+                                                <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">
+                                                    READ MORE
+                                                </Button>
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </Carousel.Item>
-                ))}
-            </Carousel>
+                                </Card.Body>
+                            </Card>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
+            </div>
         </div>
     )
 }

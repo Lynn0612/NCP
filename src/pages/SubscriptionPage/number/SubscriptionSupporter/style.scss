@@ -1,3 +1,7 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 #subscriptionsupporter {
 
     .title {
@@ -6,10 +10,33 @@
         padding: 12px 0;
         background: var(--ncp-secondary);
         color: var(--ncp-white);
+
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
+        }
+    }
+
+    .suportercol {
+        @include media-breakpoint-down(md) {
+            padding: 40px 0;
+        }
+    }
+
+    .suporter-border {
+        @include media-breakpoint-down(md) {
+            border-bottom: 2px solid var(--ncp-bg-3);
+            border-top: 2px solid var(--ncp-bg-3);
+
+        }
     }
 
     .supporter {
         padding: 60px 0;
+
+        @include media-breakpoint-down(md) {
+            padding: 0;
+        }
+
 
         h1 {
             color: var(--ncp-state-warning);
