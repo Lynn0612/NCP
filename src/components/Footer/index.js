@@ -26,7 +26,7 @@ const footer = () => {
             <Nav.Link href="#" className="footer-link">Data Panels</Nav.Link>
             <Nav.Link href="/subscription" className="footer-link">Subscription</Nav.Link>
             <Nav.Link href="/news" className="footer-link">News</Nav.Link>
-            <Nav.Link href="#" className="footer-link">Blog</Nav.Link>
+            <Nav.Link href="/blog" className="footer-link">Blog</Nav.Link>
           </Col>
           <Col lg={4} md={3} xs={12} className="footer-paragraph">
             <p>Sign up for the latest carbon insights from our monthly newsletter and other<br></br>

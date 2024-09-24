@@ -24,6 +24,23 @@ export const getBasicConfigs = () => {
     return getData(`v1/config/basic`);
 };
 
+export const getBloglist = (page = 1, pageSize = 10, cateId = null) => {
+    const params = {
+        page,
+        page_size: pageSize
+    };
+    if (cateId != null) {
+        params.category_id = cateId;
+    }
+    return getData('v1/blog/list', params);
+};
+export const getBlogCategories = () => {
+    return getData(`v1/blog/categories`);
+};
+export const getBlogContent = (slug) => {
+    return getData(`v1/blog/content`, { slug: slug });
+};
+
 const getData = (uri, data) => {
     let url = `${process.env.REACT_APP_API_URL}${uri}`;
     if (data) {

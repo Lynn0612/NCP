@@ -1,59 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import "./style.scss";
 import { useParams, useNavigate } from 'react-router-dom';
-import { getNewsContent } from '@rsrc/api';
-import { NewsBanner } from '../banner/NewsBanner';
+import { getBlogContent } from '@rsrc/api';
+import { BlogBanner } from '../banner/BlogBanner';
 import { Container, Row, Col, Breadcrumb } from 'react-bootstrap';
 import UserCard from 'src/components/UserCard';
 
-const NewsArticle = () => {
+const BlogArticle = () => {
     const { slug } = useParams();
     const [article, setArticle] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (slug) {
-            getNewsContent(slug).then(response => {
-                if (response.data) {
-                    setArticle(response.data);
-                } else {
-                    navigate('/404');
-                }
-            });
+            getBlogContent(slug).then(response => {
+            if (response.data) {
+              setArticle(response.data);
+            } else {
+              navigate('/404');
+            }
+          });
         }
-    }, [slug, navigate]);
+      }, [slug, navigate]);
 
     if (!article) return null;
 
     return (
         <>
-            <NewsBanner
-                newsbanner={article.cover_url}
+            <BlogBanner
+                blogbanner={article.cover_url}
                 title={article.title}
                 description={article.description}
             />
-            <Breadcrumb fluid>
+            <Breadcrumb  fluid>
                 <div className="d-flex news-bread">
                     <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                     <span className="mx-3">{' > '}</span>
-                    <Breadcrumb.Item href="/news">
-                        News
+                    <Breadcrumb.Item href="/blog">
+                        Blog
                     </Breadcrumb.Item>
                     <span className="mx-3">{' > '}</span>
                     <span className="breadcrumb-color">{article.title}</span>
                 </div>
             </Breadcrumb>
-            <Container id="news-article" className="p-0">
+            <Container id="blogarticle" className="p-0">
                 <Row className="news-margin p-0">
                     <Col className="news-margin news-padding">
                         <h1 >{article.title}</h1>
                         <div dangerouslySetInnerHTML={{ __html: article.content }} />
                     </Col>
                 </Row>
-                <UserCard />
+                <UserCard/>
             </Container>
         </>
     );
 };
 
-export default NewsArticle;
+export default BlogArticle;
