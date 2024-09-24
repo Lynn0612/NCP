@@ -17,7 +17,7 @@ const UserNavbar = () => {
                         <Nav.Link href="#">Data Panels</Nav.Link>
                         <Nav.Link href="subscription">Subscription</Nav.Link>
                         <Nav.Link href="/news">News</Nav.Link>
-                        <Nav.Link href="#">Blog</Nav.Link>
+                        <Nav.Link href="/blog">Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
                         <Button className="my-btn btn border-0 fw-bold px-3">CONTACT US</Button>
