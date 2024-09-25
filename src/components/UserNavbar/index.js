@@ -14,7 +14,7 @@ const UserNavbar = () => {
                     <Nav className="mx-auto">
                         <Nav.Link href="/about">About Us</Nav.Link>
                         <Nav.Link href="/project">Project</Nav.Link>
-                        <Nav.Link href="#">Data Panels</Nav.Link>
+                        <Nav.Link href="/datapanels">Data Panels</Nav.Link>
                         <Nav.Link href="subscription">Subscription</Nav.Link>
                         <Nav.Link href="/news">News</Nav.Link>
                         <Nav.Link href="/blog">Blog</Nav.Link>

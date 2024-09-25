@@ -1,0 +1,42 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#DataArticle {
+    margin: 60px 0;
+    max-width: 920px;
+
+    @include media-breakpoint-down(md) {
+        margin: 40px 20px;
+       }
+
+    h2 {
+        color: var(--ncp-secondary);
+        font-weight: 800;
+        margin: 0;
+    }
+
+    hr {
+        color: var(--ncp-back-1);
+        margin: 24px 0;
+    }
+
+    h4 {
+        color: var(--ncp-secondary);
+        border-bottom: 1px solid var(--ncp-secondary);
+        display: inline-block;
+        margin: 24px 0;
+    }
+    
+    .content {
+        max-width: 810px;
+    }
+
+    p {
+        margin-bottom: 24px;
+    }
+
+    .content-p {
+        margin: 24px 0 0 0;
+    }
+}

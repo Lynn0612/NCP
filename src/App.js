@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, AboutPage, News, FaqPage, PrivacyPage, TermsPage, Blog } from './pages';
+import { HomePage, AboutPage, News, FaqPage, PrivacyPage, TermsPage, Blog, DataPanels } from './pages';
 import { UserNavbar } from '@/components';
 import { Footer } from '@/components';
 import NewsArticle from './pages/News/NewsArticle';
@@ -30,6 +30,7 @@ function App() {
         <Route path="subscription" element={<SubscriptionPage />} />
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<BlogArticle />} />
+        <Route path="datapanels" element={<DataPanels />} />
       </Routes>
       <Footer />
     </BrowserRouter>

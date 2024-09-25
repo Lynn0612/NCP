@@ -1,0 +1,104 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#DataBtn {
+    .title {
+        max-width: 260px;
+        padding: 0 20px;
+    }
+
+    .btn-name {
+        font-size: 20px;
+        text-decoration: none;
+        color: var(--ncp-gray-4);
+
+        &.selected {
+            color: var(--ncp-state-warning) !important;  // 設定選中狀態的顏色
+        }
+
+        &:hover {
+            color: var(--ncp-highlight);
+        }
+    }
+
+    hr {
+        margin: 24px 0;
+        color: var(--ncp-gray-4);
+    }
+
+    h2 {
+        padding: 0 20px;
+        max-width: 260px;
+        margin-bottom: 24px;
+    }
+
+    p {
+        cursor: pointer;
+        &:active {
+            color: var(--ncp-state-warning) !important;
+        }
+    }
+
+    .news-btn {
+        margin-top: 40px;
+        font-size: 16px;
+        background-color: transparent;
+        border: 1px solid var(--ncp-black-1);
+        color: var(--ncp-black-1);
+        text-align: center;
+        padding: 6px 24px;
+        border-radius: 10px;
+    
+        &:hover {
+          background-color: transparent;
+          border: 1px solid var(--ncp-highlight);
+          color: var(--ncp-highlight);
+        }
+    
+        &:active {
+          background-color: transparent !important;
+          color: var(--ncp-highlight) !important;
+          filter: brightness(85%);
+          border: 1px solid var(--ncp-highlight) !important;
+        }
+      }
+    
+      .dropdown {
+        width: 102%;
+        left: -3px;
+      }
+    
+      .dropdown-toggle {
+        background-color: transparent !important;
+        border: none;
+        color: var(--ncp-highlight);
+        display: block;
+        width: 100%;
+        overflow: hidden;
+      }
+    
+      .dropdown-menu {
+        border: 1px solid;
+        width: 100%;
+        transform: none !important;
+        margin-top: 48px;
+        overflow: hidden;
+      }
+    
+      .dropdown-item {
+        background-color: transparent;
+        color: var(--ncp-black-1);
+        text-align: left;
+    
+        &:hover {
+          background-color: var(--ncp-highlight) !important;
+          color: var(--ncp-white) !important;
+        }
+    
+        &.active {
+          background-color: var(--ncp-highlight) !important;
+          color: var(--ncp-white) !important;
+        }
+      }
+}
