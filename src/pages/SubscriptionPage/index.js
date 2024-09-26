@@ -11,10 +11,10 @@ const SubscriptionPage = () => {
 
     return (
         <>
-            <SubscriptionBanner />
+            {/* <SubscriptionBanner />
             <SubscriptionSupporter />
             <SubscriptionCard />
-            <SubscriptionContent />
+            <SubscriptionContent /> */}
         </>
     );
 };
