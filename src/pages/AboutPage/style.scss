@@ -1,3 +1,34 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#AboutPage {
+
 .about {
     color: blue;
 }
+
+.content {
+    margin: auto;
+
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
+}
+
+.title {
+    font-size: 36px;
+    padding-top: 60px;
+    margin: 0;
+
+    @include media-breakpoint-down(md) {
+        font-size: 24px;
+    }
+}
+
+.hr {
+    border: 1px solid var(--ncp-black-1);
+    margin: 24px 0;
+}
+}
+
