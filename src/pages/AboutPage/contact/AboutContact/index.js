@@ -1,18 +1,19 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.scss"
 import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap';
 import usbanner from './US-banner.png';
-import code from './code.png';
-import { getCaptcha } from '@rsrc/api';
+import { getCaptcha, postContact } from '@rsrc/api';
 
 export const AboutContact = () => {
     const [captchaSrc, setCaptchaSrc] = useState('');
+    const [captchaKey, setCaptchaKey] = useState('');
 
     useEffect(() => {
         const fetchCaptcha = async () => {
             try {
                 const data = await getCaptcha();
                 setCaptchaSrc(data.img);
+                setCaptchaKey(data.key);
             } catch (error) {
                 console.error('Error fetching captcha:', error);
             }
@@ -49,7 +50,29 @@ export const AboutContact = () => {
             [name]: name === 'checkbox' ? checked : value
         }));
     };
-    
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!isFormValid()) return;
+
+        const contactData = {
+            name: formValues.name,
+            email: formValues.email,
+            mobile: formValues.number,
+            company: formValues.company,
+            job_title: formValues.job,
+            description: formValues.feedback,
+            key: captchaKey,
+            captcha: formValues.code
+        };
+
+        try {
+            await postContact(contactData);
+        } catch (error) {
+            console.error('Error submitting contact form:', error);
+        }
+    };
+
     const handleBlur = ({ target: { name } }) => {
         setIsTouched(prevTouched => ({ ...prevTouched, [name]: true }));
     };
@@ -71,6 +94,16 @@ export const AboutContact = () => {
         );
     };
 
+    const handleRefreshCaptcha = async () => {
+        try {
+            const data = await getCaptcha(); 
+            setCaptchaSrc(data.img); 
+            setCaptchaKey(data.key); 
+        } catch (error) {
+            console.error('Error refreshing captcha:', error);
+        }
+    };
+
     return (
         <Container id="AboutContact">
             <Row>
@@ -84,11 +117,11 @@ export const AboutContact = () => {
                         <h4>Contact us</h4>
                         <p>Fill out the form below and we’ll schedule the demo session very soon.</p>
                     </div>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="name">
                             <Form.Label>Enter your name <span>*</span></Form.Label>
-                            <Form.Control 
-                                type="text" 
+                            <Form.Control
+                                type="text"
                                 name="name"
                                 value={formValues.name}
                                 onChange={handleChange}
@@ -103,8 +136,8 @@ export const AboutContact = () => {
                         </Form.Group>
                         <Form.Group controlId="email">
                             <Form.Label>Work Email <span>*</span></Form.Label>
-                            <Form.Control 
-                                type="email" 
+                            <Form.Control
+                                type="email"
                                 name="email"
                                 value={formValues.email}
                                 onChange={handleChange}
@@ -119,8 +152,8 @@ export const AboutContact = () => {
                         </Form.Group>
                         <Form.Group controlId="number">
                             <Form.Label>Mobile Number <span>*</span></Form.Label>
-                            <Form.Control 
-                                type="tel" 
+                            <Form.Control
+                                type="tel"
                                 name="number"
                                 value={formValues.number}
                                 onChange={handleChange}
@@ -135,8 +168,8 @@ export const AboutContact = () => {
                         </Form.Group>
                         <Form.Group controlId="company">
                             <Form.Label>Company Name <span>*</span></Form.Label>
-                            <Form.Control 
-                                type="text" 
+                            <Form.Control
+                                type="text"
                                 name="company"
                                 value={formValues.company}
                                 onChange={handleChange}
@@ -151,8 +184,8 @@ export const AboutContact = () => {
                         </Form.Group>
                         <Form.Group controlId="job">
                             <Form.Label>Job Title <span>*</span></Form.Label>
-                            <Form.Control 
-                                type="text" 
+                            <Form.Control
+                                type="text"
                                 name="job"
                                 value={formValues.job}
                                 onChange={handleChange}
@@ -185,20 +218,21 @@ export const AboutContact = () => {
                         <Form.Group controlId="code">
                             <Form.Label>Verification code <span>*</span></Form.Label>
                             <div className="d-flex align-items-center flex-column flex-sm-row code">
-                                <Form.Control 
-                                    type="text" 
+                                <Form.Control
+                                    type="text"
                                     name="code"
                                     value={formValues.code}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    className={isTouched.code && !formValues.code ? 'is-invalid' : 'code-input'} 
+                                    className={isTouched.code && !formValues.code ? 'is-invalid' : 'code-input'}
                                 />
                                 <div className="image-container">
                                     <Image
                                         src={captchaSrc}
                                         className="verification-image"
+                                        onClick={handleRefreshCaptcha}
                                     />
-                                    <i className="bi bi-arrow-clockwise ms-2 rotate"></i>
+                                    <i className="bi bi-arrow-clockwise ms-2 rotate" onClick={handleRefreshCaptcha}></i>
                                 </div>
                             </div>
                             {isTouched.code && !formValues.code && (
@@ -207,38 +241,38 @@ export const AboutContact = () => {
                                 </Form.Text>
                             )}
                         </Form.Group>
+                        <p>Briefly explain any specific areas of the problem you want us to solve</p>
+                        <Form.Group controlId="checkbox">
+                            <Form.Check
+                                type="checkbox"
+                                name="checkbox"
+                                checked={formValues.checkbox}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className={isTouched.checkbox && !formValues.checkbox ? 'is-invalid' : ''}
+                                label={
+                                    <>
+                                        I accept the
+                                        <a href="/terms"> Terms and Conditions</a>
+                                    </>
+                                }
+                            />
+                            {isTouched.checkbox && !formValues.checkbox && (
+                                <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
+                                    * is required
+                                </Form.Text>
+                            )}
+                        </Form.Group>
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            className="w-100"
+                            style={{ backgroundColor: isFormValid() ? 'var(--ncp-primary-1)' : 'var(--ncp-gray-4)', borderColor: isFormValid() ? 'var(--ncp-primary-1)' : 'var(--ncp-gray-4)' }}
+                            disabled={!isFormValid()}
+                        >
+                            SEND DATA<i className="bi bi-arrow-right"></i>
+                        </Button>
                     </Form>
-                    <p>Briefly explain any specific areas of the problem you want us to solve</p>
-                    <Form.Group controlId="checkbox">
-                        <Form.Check
-                            type="checkbox"
-                            name="checkbox"
-                            checked={formValues.checkbox}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className={isTouched.checkbox && !formValues.checkbox ? 'is-invalid' : ''}
-                            label={
-                                <>
-                                    I accept the
-                                    <a href="/terms"> Terms and Conditions</a>
-                                </>
-                            }
-                        />
-                        {isTouched.checkbox && !formValues.checkbox && (
-                            <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
-                                * is required
-                            </Form.Text>
-                        )}
-                    </Form.Group>
-                    <Button 
-                        variant="primary" 
-                        type="submit" 
-                        className="w-100"
-                        style={{ backgroundColor: isFormValid() ? 'var(--ncp-primary-1)' : 'var(--ncp-gray-4)', borderColor: isFormValid() ? 'var(--ncp-primary-1)' : 'var(--ncp-gray-4)' }}
-                        disabled={!isFormValid()}
-                    >
-                        SEND DATA<i className="bi bi-arrow-right"></i>
-                    </Button>
                 </Col>
             </Row>
         </Container>
