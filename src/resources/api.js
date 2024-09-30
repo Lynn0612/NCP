@@ -41,6 +41,17 @@ export const getBlogContent = (slug) => {
     return getData(`v1/blog/content`, { slug: slug });
 };
 
+export const getCaptcha = () => {
+    const url = `${process.env.REACT_APP_URL}captcha/api/math`;
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('not ok');
+            }
+            return res.json();
+        });
+};
+
 const getData = (uri, data) => {
     let url = `${process.env.REACT_APP_API_URL}${uri}`;
     if (data) {

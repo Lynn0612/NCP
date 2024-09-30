@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import "./style.scss"
 import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap';
 import usbanner from './US-banner.png';
 import code from './code.png';
+import { getCaptcha } from '@rsrc/api';
 
 export const AboutContact = () => {
+    const [captchaSrc, setCaptchaSrc] = useState('');
+
+    useEffect(() => {
+        const fetchCaptcha = async () => {
+            try {
+                const data = await getCaptcha();
+                setCaptchaSrc(data.img);
+            } catch (error) {
+                console.error('Error fetching captcha:', error);
+            }
+        };
+
+        fetchCaptcha();
+    }, []);
+
     const [formValues, setFormValues] = useState({
         name: '',
         email: '',
@@ -178,7 +194,10 @@ export const AboutContact = () => {
                                     className={isTouched.code && !formValues.code ? 'is-invalid' : 'code-input'} 
                                 />
                                 <div className="image-container">
-                                    <Image src={code} className="verification-image" />
+                                    <Image
+                                        src={captchaSrc}
+                                        className="verification-image"
+                                    />
                                     <i className="bi bi-arrow-clockwise ms-2 rotate"></i>
                                 </div>
                             </div>
