@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "./style.scss"
 import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap';
 import usbanner from './US-banner.png';
 import { getCaptcha, postContact } from '@rsrc/api';
+import { useNavigate } from 'react-router-dom';
 
 export const AboutContact = () => {
     const [captchaSrc, setCaptchaSrc] = useState('');
     const [captchaKey, setCaptchaKey] = useState('');
+    const [captchaError, setCaptchaError] = useState(false);
+    const navigate = useNavigate();
+    const formRef = useRef(null); 
 
     useEffect(() => {
         const fetchCaptcha = async () => {
@@ -49,11 +53,22 @@ export const AboutContact = () => {
             ...prevValues,
             [name]: name === 'checkbox' ? checked : value
         }));
+        setIsTouched(prevTouched => ({
+            ...prevTouched,
+            [name]: true
+        }));
+        if (name === 'code') {
+            setCaptchaError(false);
+        }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!isFormValid()) return;
+
+        const isValid = isFormValid();
+        if (!isValid) {
+            return;
+        }
 
         const contactData = {
             name: formValues.name,
@@ -67,12 +82,37 @@ export const AboutContact = () => {
         };
 
         try {
-            await postContact(contactData);
+            const response = await postContact(contactData);
+            if (response.success) {
+                setCaptchaError(false);
+                setFormValues(prevValues => ({
+                    ...prevValues,
+                    code: ''
+                }));
+                navigate('/', { state: { scroll: true } });
+                window.scrollTo(0, 0);
+            } else {
+                setCaptchaError(true);
+                setFormValues(prevValues => ({
+                    ...prevValues,
+                    code: ''
+                }));
+                handleRefreshCaptcha();
+            }
         } catch (error) {
-            console.error('Error submitting contact form:', error);
+            console.error("Error submitting contact form:", error);
         }
     };
 
+    const isFormValid = () => {
+        const allTouched = Object.values(isTouched).every(touched => touched);
+        const allValid = Object.entries(formValues).every(([key, value]) => {
+            if (!value) return false;
+            return getValidationRules(key, value);
+        });
+        return allTouched && allValid;
+    };
+    
     const handleBlur = ({ target: { name } }) => {
         setIsTouched(prevTouched => ({ ...prevTouched, [name]: true }));
     };
@@ -80,25 +120,29 @@ export const AboutContact = () => {
     const isEmailValid = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const isNumberValid = (number) => /^\d+$/.test(number);
 
-    const isFormValid = () => {
-        const { name, email, number, company, job, feedback, code, checkbox } = formValues;
-        return (
-            name.trim() !== '' &&
-            isEmailValid(email) &&
-            isNumberValid(number) &&
-            company.trim() !== '' &&
-            job.trim() !== '' &&
-            feedback.trim() !== '' &&
-            code.trim() !== '' &&
-            checkbox
-        );
+    const getValidationRules = (name, value) => {
+        const type = formRef.current.elements[name]?.type;
+
+        switch (type) {
+            case 'text':
+            case 'textarea':
+                return value.trim() !== '';
+            case 'email':
+                return isEmailValid(value);
+            case 'tel':
+                return isNumberValid(value);
+            case 'checkbox':
+                return value;
+            default:
+                return true;
+        }
     };
 
     const handleRefreshCaptcha = async () => {
         try {
-            const data = await getCaptcha(); 
-            setCaptchaSrc(data.img); 
-            setCaptchaKey(data.key); 
+            const data = await getCaptcha();
+            setCaptchaSrc(data.img);
+            setCaptchaKey(data.key);
         } catch (error) {
             console.error('Error refreshing captcha:', error);
         }
@@ -117,7 +161,7 @@ export const AboutContact = () => {
                         <h4>Contact us</h4>
                         <p>Fill out the form below and we’ll schedule the demo session very soon.</p>
                     </div>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} ref={formRef}>
                         <Form.Group controlId="name">
                             <Form.Label>Enter your name <span>*</span></Form.Label>
                             <Form.Control
@@ -235,9 +279,14 @@ export const AboutContact = () => {
                                     <i className="bi bi-arrow-clockwise ms-2 rotate" onClick={handleRefreshCaptcha}></i>
                                 </div>
                             </div>
-                            {isTouched.code && !formValues.code && (
+                            {isTouched.code && !formValues.code && !captchaError && (
                                 <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
                                     * is required
+                                </Form.Text>
+                            )}
+                            {isTouched.code && captchaError && (
+                                <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
+                                    * this is wrong
                                 </Form.Text>
                             )}
                         </Form.Group>

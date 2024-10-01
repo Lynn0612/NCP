@@ -80,10 +80,15 @@
             border: none;
             font-size: 16px;
             font-weight: 800;
+    
+            &:active {
+                background-color: var(--ncp-primary-1) !important;
+                color: white !important;
+                filter: brightness(85%);
+            }
         }
 
         .code-input {
-            max-width: 400px;
             max-height: 44px;
         }
 
