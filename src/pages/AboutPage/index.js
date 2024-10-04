@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./style.scss"
 import { AboutBanner } from './banner';
 import { AboutArticle } from './article';
 import { AboutArticle1 } from './article';
+import { AboutContact } from './contact';
 import { Container, Row, Col } from 'react-bootstrap';
 import ModalWindow from 'src/components/ModalWindow';
 import about1 from './about1.png';
@@ -51,7 +52,17 @@ const modalStyle3 = {
 };
 
 
-const AboutPage = () => (
+const AboutPage = () => {
+
+        useEffect(() => {
+          const contactSection = document.getElementById('about-contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, []);
+
+        return (
+
     <div id="AboutPage">
         <AboutBanner />
         <Container>
@@ -65,9 +76,15 @@ const AboutPage = () => (
                     <hr className="hr"></hr>
                 </Col>
             </Row>
-        <ModalWindow modalData={modalData} modalStyle={modalStyle} modalStyle1={modalStyle1} modalStyle2={modalStyle2} modalStyle3={modalStyle3}/>
+        <ModalWindow modalData={modalData} modalStyle={modalStyle} modalStyle1={modalStyle1} modalStyle2={modalStyle2} modalStyle3={modalStyle3} colSizes={{ md: 3, xs: 12 }}/>
         </Container>
         <Partners />
-    </div>)
+        <div id="about-contact">
+        <AboutContact />
+        </div>
+    </div>
+      );
+    };
+  
 export default AboutPage
 

@@ -6,8 +6,23 @@ import Row from 'react-bootstrap/Row';
 import { Image } from 'react-bootstrap';
 import footerlogo from './footerlogo.png';
 import { Nav, Button } from 'react-bootstrap';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const footer = () => {
+const Footer = () => {
+  const navigate = useNavigate();
+  const aboutlocation = useLocation();
+
+  const scrollToContact = () => {
+    navigate('/about');
+    setTimeout(() => {
+      const contactSection = document.getElementById('about-contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500);
+  };
+  const isAboutPage = aboutlocation.pathname === '/about';
+
   return (
     <footer id="footer">
       <Container className="footer-container">
@@ -32,7 +47,9 @@ const footer = () => {
             <p>Sign up for the latest carbon insights from our monthly newsletter and other<br></br>
               occasional updates.</p>
             <p>By clicking subscribe, you agree to the Privacy Policy  </p>
-            <Button className="footer-btn my-4 d-flex justify-content-center align-items-center">Contact Us</Button>
+            {!isAboutPage && (
+              <Button className="footer-btn my-4 d-flex justify-content-center align-items-center" onClick={scrollToContact}>Contact Us</Button>
+            )}
           </Col>
         </Row>
         <Row className="mt-5">
@@ -50,4 +67,4 @@ const footer = () => {
     </footer>
   )
 }
-export default footer
+export default Footer

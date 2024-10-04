@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import "./style.scss";
 import { Container, Row, Col, Button, Modal, Image } from 'react-bootstrap';
 
-const ModalWindow = ({ modalData, modalStyle, modalStyle1, modalStyle2, modalStyle3 }) => {
+const ModalWindow = ({ modalData, modalStyle, modalStyle1, modalStyle2, modalStyle3, colSizes }) => {
     const [showModal, setShowModal] = useState(null);
     const handleClose = () => setShowModal(null);
     const handleShow = (id) => setShowModal(id);
+    const defaultColSizes = { md: 3, xs: 6, sm: 4 };
+    const colConfig = colSizes || defaultColSizes;
 
     return (
         <Container id='modalwindow'>
             <Row className='modalmargin'>
                 {modalData.map((item, index) => (
-                    <Col md={3} xs={6} sm={4} className='position-relative mb-4' key={index}>
+                    <Col md={colConfig.md} xs={colConfig.xs} sm={colConfig.sm} className='position-relative mb-4' key={index}>
                         <div className='image-container'>
                             <Image src={item.image} className='shadowed-image' style={modalStyle2}/>
                             <div className='image-overlay' style={modalStyle}>

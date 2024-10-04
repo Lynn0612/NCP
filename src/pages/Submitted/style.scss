@@ -1,0 +1,117 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#pagenotfound {
+
+    position: relative;
+
+    .pnfimg {
+        object-fit: cover;
+        height: 100vh;
+    }
+    
+    .bi-check-circle-fill {
+        color: var(--ncp-state-primary);
+        font-size: 50px;
+    }
+    
+    .my-btn {
+        color: var(--ncp-white);
+        background-color: var(--ncp-highlight);
+        font-size: 16px;
+        padding: 12px 24px;
+        border-radius: 10px;
+        margin-right: 12px;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 12px;
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: var(--ncp-highlight);
+            color: var(--ncp-white);
+        }
+
+        &:active {
+            background-color: var(--ncp-highlight) !important;
+            color: var(--ncp-white) !important;
+            filter: brightness(115%);
+        }
+    }    
+
+    .bi-arrow-right {
+        margin-left: 12px;
+    }
+
+    .my-btn-about{
+        color: var(--ncp-highlight);
+        background-color: var(--ncp-white);
+        font-size: 16px;
+        border: 1px solid var(--ncp-highlight) !important;
+        padding: 12px 24px;
+        border-radius: 10px;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 12px;
+        }
+
+        &:hover {
+            background-color: var(--ncp-white);
+            color: var(--ncp-highlight);
+        }
+
+        &:active {
+            background-color: var(--ncp-white) !important;
+            color: var(--ncp-highlight) !important;
+            filter: brightness(115%);
+        }
+    }
+
+    .pnf {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 520px;
+        padding: 0 20px;
+
+        @include media-breakpoint-down(md) {
+            width: 390px;
+        }
+    }
+
+    .pnf-content {
+        justify-content: center;
+        align-items: center;
+        width: 480px;
+
+        @include media-breakpoint-down(md) {
+            width: 350px;
+        }
+    }
+
+    .pnf-title {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--ncp-black-1);
+        margin-bottom: 6.75px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 32px;
+        }
+    }
+
+    .pnf-p {
+        font-size: 16px;
+        text-align: center;
+        color: var(--ncp-gray-2);
+        margin-bottom: 24px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 14px;
+        }
+    }
+} 
