@@ -18,8 +18,8 @@ const ModalWindow = ({ modalData, modalStyle, modalStyle1, modalStyle2, modalSty
                             <Image src={item.image} className='shadowed-image' style={modalStyle2}/>
                             <div className='image-overlay' style={modalStyle}>
                                 <div className='overlay-text'>
-                                    <h4 className='fw-bold m-0 text-center'>{item.title}</h4>
-                                    <p className='modal-py m-0' style={modalStyle3}>{item.subtitle}</p>
+                                    <h4 className='fw-bold m-0 text-center'>{item.name}</h4>
+                                    <p className='modal-py m-0' style={modalStyle3}>{item.intro}</p>
                                 </div>
                                 <Button className='btn' onClick={() => handleShow(item.id)}>
                                     <div className="circle-bg">
@@ -41,13 +41,13 @@ const ModalWindow = ({ modalData, modalStyle, modalStyle1, modalStyle2, modalSty
                                             <Image src={item.image} className='shadowed-image w-100' />
                                             <div className='image-overlay'  style={modalStyle}></div>
                                             <div className='overlay-text'>
-                                                <h4 className='fw-bold m-0 text-center'>{item.title}</h4>
-                                                <p className='modal-py m-0' style={modalStyle3}>{item.subtitle}</p>
+                                                <h4 className='fw-bold m-0 text-center'>{item.name}</h4>
+                                                <p className='modal-py m-0' style={modalStyle3}>{item.intro}</p>
                                             </div>
                                         </div>
                                     </Col>
                                     <Col lg={8} md={8} className='content'>
-                                        <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
+                                        <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
                                     </Col>
                                 </Row>
                             </Modal.Body>

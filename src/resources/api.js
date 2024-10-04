@@ -56,6 +56,14 @@ export const postContact = (data) => {
     return postData('v1/contact', data);
 };
 
+export const getpProjectEcology = () => {
+    return getData(`v1/ecology`);
+};
+
+export const getpOurTeam = () => {
+    return getData(`v1/team`);
+};
+
 const getData = (uri, data) => {
     let url = `${process.env.REACT_APP_API_URL}${uri}`;
     if (data) {
