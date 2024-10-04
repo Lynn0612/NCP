@@ -10,7 +10,7 @@ export const AboutContact = () => {
     const [captchaKey, setCaptchaKey] = useState('');
     const [captchaError, setCaptchaError] = useState(false);
     const navigate = useNavigate();
-    const formRef = useRef(null); 
+    const formRef = useRef(null);
 
     useEffect(() => {
         const fetchCaptcha = async () => {
@@ -112,7 +112,7 @@ export const AboutContact = () => {
         });
         return allTouched && allValid;
     };
-    
+
     const handleBlur = ({ target: { name } }) => {
         setIsTouched(prevTouched => ({ ...prevTouched, [name]: true }));
     };
@@ -188,9 +188,14 @@ export const AboutContact = () => {
                                 onBlur={handleBlur}
                                 className={isTouched.email && (!formValues.email || !isEmailValid(formValues.email)) ? 'is-invalid' : ''}
                             />
-                            {isTouched.email && (!formValues.email || !isEmailValid(formValues.email)) && (
+                            {isTouched.email && !formValues.email && (
                                 <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
                                     * is required
+                                </Form.Text>
+                            )}
+                            {isTouched.email && formValues.email && !isEmailValid(formValues.email) && (
+                                <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
+                                    * this is wrong
                                 </Form.Text>
                             )}
                         </Form.Group>
@@ -204,9 +209,14 @@ export const AboutContact = () => {
                                 onBlur={handleBlur}
                                 className={isTouched.number && (!formValues.number || !isNumberValid(formValues.number)) ? 'is-invalid' : ''}
                             />
-                            {isTouched.number && (!formValues.number || !isNumberValid(formValues.number)) && (
+                            {isTouched.number && !formValues.number && (
                                 <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
                                     * is required
+                                </Form.Text>
+                            )}
+                            {isTouched.number && formValues.number && !isNumberValid(formValues.number) && (
+                                <Form.Text style={{ color: 'var(--ncp-state-error)', fontSize: '12px' }}>
+                                    * this is wrong
                                 </Form.Text>
                             )}
                         </Form.Group>
