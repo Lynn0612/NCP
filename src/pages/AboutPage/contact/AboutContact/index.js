@@ -89,7 +89,7 @@ export const AboutContact = () => {
                     ...prevValues,
                     code: ''
                 }));
-                navigate('/', { state: { scroll: true } });
+                navigate('/submitted', { state: { scroll: true } });
                 window.scrollTo(0, 0);
             } else {
                 setCaptchaError(true);

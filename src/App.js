@@ -12,6 +12,7 @@ import BlogArticle from './pages/Blog/BlogArticle';
 import PageNotFound from './pages/PageNotFound';
 import  ProjectPage from './pages/ProjectPage';
 import  SubscriptionPage from './pages/SubscriptionPage';
+import  Submitted from './pages/Submitted';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<BlogArticle />} />
         <Route path="datapanels" element={<DataPanels />} />
+        <Route path="submitted" element={<Submitted />} />
       </Routes>
       <Footer />
     </BrowserRouter>
