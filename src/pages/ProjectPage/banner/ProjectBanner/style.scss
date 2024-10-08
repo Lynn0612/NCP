@@ -17,7 +17,7 @@
         @include media-breakpoint-down(md) {
             justify-content: center !important;
             align-items: center !important;
-            padding: 0;
+            padding-top: 40px;
         }
     }
 
@@ -32,6 +32,10 @@
 
     .project-content {
         width: 680px;
+
+        @include media-breakpoint-down(md) {
+            padding: 24px 20px 40px 20px;
+        }
     }
 
     .title {

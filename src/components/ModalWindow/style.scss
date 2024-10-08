@@ -6,6 +6,11 @@
 
     padding: 0;
 
+    .bi::before {
+        font-size: 15px;
+        font-weight: bolder !important;
+    }
+
     .modalmargin {
         margin: 24px 40px; 
         justify-content: space-between;
@@ -13,6 +18,12 @@
         @include media-breakpoint-down(md) {
            margin: 24px 20px;
         }
+    }
+
+    .position-relative {
+        padding: 0;
+        display: flex;
+        justify-content: center;
     }
 
     .modal-m {
@@ -32,10 +43,10 @@
         object-fit: cover;
         border-radius: 10px;
 
-        @include media-breakpoint-down(md) {
-            width: 150px;
-            height: 210px;
-        }
+        // @include media-breakpoint-down(md) {
+        //     max-width: 150px;
+        //     max-height: 210px;
+        // }
     }
 
     .modalcol {
@@ -133,6 +144,7 @@
         background: var(--modal-content-background, var(--ncp-black-1));
         width: 800px;
         padding: 40px 20px;
+        height: 100%;;
 
         @include media-breakpoint-down(md) {
             width: 100vw;
@@ -149,9 +161,10 @@
         border: 1px solid var(--ncp-white);
         color: var(--ncp-white);
         position: absolute;
-        bottom: 5px;
-        right: 10px;
+        bottom: 20px;
+        right: 20px;
         font-size: 16px;
+        margin: 0;
 
         &:active {
             background-color: transparent !important;
@@ -245,9 +258,26 @@
             margin-top: 36px;
         }
     }
+    
+    .modal-body {
+        padding: 0;
+    }
 }
 
 .modal-backdrop {
     width: 100%;
     height: 100%;
+}
+
+.aboutcd {
+    @include media-breakpoint-down(md) {
+        max-width: 300px;
+        max-height: 420px;
+    }
+}
+.projectcd {
+    @include media-breakpoint-down(md) {
+        max-width: 150px;
+        max-height: 210px;
+    }
 }

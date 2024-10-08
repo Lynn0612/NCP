@@ -17,7 +17,7 @@ const InsideBanner = () => {
                     <Col xs={4} className="banner-text">
                         <h1>Introducing Project<br />Catalog & Screenings:</h1>
                         <p>Expanding Access to High-Quality Carbon Offset Projects</p>
-                        <Button className="my-btn btn border-0 fw-bold px-5 my-5 d-flex justify-content-center align-items-center">READ MORE</Button>
+                        <Button className="my-btn btn border-0 fw-bold d-flex justify-content-center align-items-center">READ MORE</Button>
                     </Col>
                 </Col>
             </Row>

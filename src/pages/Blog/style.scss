@@ -9,13 +9,12 @@
 }
 
 .news-bread {
-    margin-left: 290px;
+    margin-left: calc(50vw - 450px);
     text-decoration: none;
 
     @media (max-width: 1024px) { 
         margin-left: 0 !important;
     }
-
 }
 
 .breadcrumb-item>a {

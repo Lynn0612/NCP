@@ -8,12 +8,15 @@
     }
 }
 
-.news-bread {
-    margin-left: 290px;
+.newsbread {
+    margin-left: calc(50vw - 650px);
     text-decoration: none;
 
     @media (max-width: 1024px) { 
         margin-left: 0 !important;
+    }
+    @media (max-width: 1400px) { 
+        margin-left: calc(50vw - 38%);
     }
 
 }

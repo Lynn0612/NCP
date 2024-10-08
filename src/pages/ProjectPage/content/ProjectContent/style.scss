@@ -19,7 +19,7 @@
     }
 
     .projectcontent-bg {
-        background-color: var(--ncp-bg-3);
+        background-color: var(--ncp-white);
     }
 
     .title-article {
@@ -28,7 +28,6 @@
 
     .article-col {
         padding-left: 40px;
-        padding-right: 320px;
 
         @include media-breakpoint-down(md) {
             padding: 40px 20px 0 20px;
@@ -47,7 +46,6 @@
 
     .col-article {
         padding-right: 40px;
-        padding-left: 320px;
 
         @include media-breakpoint-down(md) {
             padding: 40px 20px 0 20px;

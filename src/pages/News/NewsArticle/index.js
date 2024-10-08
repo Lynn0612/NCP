@@ -47,10 +47,12 @@ const NewsArticle = () => {
                 <Row className="news-margin p-0">
                     <Col className="news-margin news-padding">
                         <h1 >{article.title}</h1>
-                        <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                        <div className='px-md-5 article-content' dangerouslySetInnerHTML={{ __html: article.content }} />
                     </Col>
                 </Row>
-                <UserCard />
+                <Container>
+                    <UserCard />
+                </Container>
             </Container>
         </>
     );

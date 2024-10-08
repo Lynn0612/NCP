@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 import "./style.scss";
 import { Container, Row, Col, Button, Modal, Image } from 'react-bootstrap';
 
-const ModalWindow = ({ modalData, modalStyle, modalStyle1, modalStyle2, modalStyle3, colSizes }) => {
+const ModalWindow = ({ modalData, modalStyle, modalStyle1, modalStyle2, modalStyle3, colSizes, page }) => {
     const [showModal, setShowModal] = useState(null);
     const handleClose = () => setShowModal(null);
     const handleShow = (id) => setShowModal(id);
     const defaultColSizes = { md: 3, xs: 6, sm: 4 };
     const colConfig = colSizes || defaultColSizes;
 
+    const getModalClass = () => {
+        let classes = ['shadowed-image'];
+        switch (page) {
+            case 'about':
+                classes.push('aboutcd');
+                break;
+            case 'project':
+                classes.push('projectcd');
+            default:
+                break;
+        }
+        return classes.join(' ');
+    };
+
     return (
         <Container id='modalwindow'>
             <Row className='modalmargin'>
                 {modalData.map((item, index) => (
-                    <Col md={colConfig.md} xs={colConfig.xs} sm={colConfig.sm} className='position-relative mb-4' key={index}>
+                    <Col className='position-relative mb-4' key={index}>
                         <div className='image-container'>
-                            <Image src={item.image} className='shadowed-image' style={modalStyle2}/>
+                            <Image src={item.image} className={getModalClass()} style={modalStyle2}/>
                             <div className='image-overlay' style={modalStyle}>
                                 <div className='overlay-text'>
                                     <h4 className='fw-bold m-0 text-center'>{item.name}</h4>
