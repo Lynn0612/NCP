@@ -1,3 +1,7 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 #home-card {
 
     margin: 60px 0;
@@ -92,6 +96,7 @@
 
     .btn-link {
         width: 370px;
+        padding: 0 20px;
 
         @media (max-width: 1024px) { 
             width: 290px;
@@ -172,5 +177,9 @@
 
     .shadow {
         box-shadow: none !important;
+        
+        @include media-breakpoint-down(sm) {
+            padding: 0 20px;
+        }
     }
 }

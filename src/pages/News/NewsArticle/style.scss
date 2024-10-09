@@ -7,6 +7,10 @@
 
     .news-padding {
         max-width: 920px;
+        
+        @media (max-width: 768px) { 
+            padding: 0 20px !important;
+        }
     }
 
     p {
@@ -46,4 +50,11 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.news-breadcrumb {
+    position: sticky;
+    top: 89px;
+    z-index: 5;
+    height: 44px;
 }

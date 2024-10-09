@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./style.scss";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { getNewsContent } from '@rsrc/api';
 import { NewsBanner } from '../banner/NewsBanner';
 import { Container, Row, Col, Breadcrumb } from 'react-bootstrap';
@@ -10,6 +10,7 @@ const NewsArticle = () => {
     const { slug } = useParams();
     const [article, setArticle] = useState(null);
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         if (slug) {
@@ -23,6 +24,10 @@ const NewsArticle = () => {
         }
     }, [slug, navigate]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     if (!article) return null;
 
     return (
@@ -32,17 +37,19 @@ const NewsArticle = () => {
                 title={article.title}
                 description={article.description}
             />
-            <Breadcrumb fluid>
-                <div className="d-flex news-bread">
-                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                    <span className="mx-3">{' > '}</span>
-                    <Breadcrumb.Item href="/news">
-                        News
-                    </Breadcrumb.Item>
-                    <span className="mx-3">{' > '}</span>
-                    <span className="breadcrumb-color">{article.title}</span>
-                </div>
-            </Breadcrumb>
+            <div className="news-breadcrumb">
+                <Breadcrumb fluid>
+                    <div className="d-flex news-bread">
+                        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                        <span className="mx-3">{' > '}</span>
+                        <Breadcrumb.Item href="/news">
+                            News
+                        </Breadcrumb.Item>
+                        <span className="mx-3">{' > '}</span>
+                        <span className="breadcrumb-color">{article.title}</span>
+                    </div>
+                </Breadcrumb>
+            </div>
             <Container id="news-article" className="p-0">
                 <Row className="news-margin p-0">
                     <Col className="news-margin news-padding">

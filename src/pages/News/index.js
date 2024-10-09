@@ -32,7 +32,9 @@ const News = () => {
                 </div>
             </Breadcrumb>
             <Container>
+                <div className="btn-fixed">
                 <NewsBtn onChange={newsBtnHandler} />
+                </div>
                 <NewsList selectedCategoryId={selectedCategoryId} />
             </Container>
         </>

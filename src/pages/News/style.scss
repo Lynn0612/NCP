@@ -1,10 +1,10 @@
 .breadcrumb {
     background-color: var(--ncp-bg-3);
-    padding: 20px 0;
+    padding: 12px 0;
     margin: 0;    
 
     @media (max-width: 1024px) { 
-        padding: 20px !important;
+        padding: 12px 20px!important;
     }
 }
 
@@ -28,4 +28,11 @@
 
 .breadcrumb-color {
     color: var(--ncp-highlight);
+}
+
+.btn-fixed {
+        position: sticky;
+        background-color: var(--ncp-white);
+        top: 89px;
+        z-index: 6;
 }

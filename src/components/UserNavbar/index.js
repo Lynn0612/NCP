@@ -7,7 +7,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const UserNavbar = () => {
     const navigate = useNavigate();
-    const aboutlocation = useLocation();
+    const location = useLocation();
+    
     const scrollToContact = () => {
         navigate('/about');
         setTimeout(() => {
@@ -17,7 +18,7 @@ const UserNavbar = () => {
           }
         }, 500);
       };
-      const isAboutPage = aboutlocation.pathname === '/about';
+      const isAboutPage = location.pathname === '/about';
     return (
         <Navbar expand="lg" id="navbar">
             <Container>
@@ -25,12 +26,12 @@ const UserNavbar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link href="/about">About Us</Nav.Link>
-                        <Nav.Link href="/project">Project</Nav.Link>
-                        <Nav.Link href="/datapanels">Data Panels</Nav.Link>
+                        <Nav.Link href="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Nav.Link>
+                        <Nav.Link href="/project" className={location.pathname === '/project' ? 'active' : ''}>Project</Nav.Link>
+                        <Nav.Link href="/datapanels" className={location.pathname === '/datapanels' ? 'active' : ''}>Data Panels</Nav.Link>
                         {/* <Nav.Link href="subscription">Subscription</Nav.Link> */}
-                        <Nav.Link href="/news">News</Nav.Link>
-                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link href="/news" className={location.pathname === '/news' ? 'active' : ''}>News</Nav.Link>
+                        <Nav.Link href="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
                     {!isAboutPage && (

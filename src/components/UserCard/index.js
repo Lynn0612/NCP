@@ -18,6 +18,7 @@ const UserCard = () => {
         })
     }, []);
     const limitedData = data.slice(0, 3);
+    
     return (
         <div className="desk-margin" id="home-card">
             <div className="d-flex justify-content-between">

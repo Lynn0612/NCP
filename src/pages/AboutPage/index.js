@@ -42,13 +42,6 @@ const AboutPage = () => {
         fetchData();
     }, []);
 
-    // useEffect(() => {
-    //     const contactSection = document.getElementById('about-contact');
-    //     if (contactSection) {
-    //         contactSection.scrollIntoView({ behavior: 'smooth' });
-    //     }
-    // }, []);
-
     return (
 
         <div id="AboutPage">
