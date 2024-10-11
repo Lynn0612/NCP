@@ -40,7 +40,7 @@
         }
 
         &:hover {
-            color: var(--ncp-primary-1);
+            color: var(--ncp-white);
 
             &::after {
                 content: "";
@@ -61,7 +61,7 @@
         }
 
         &.active {
-            color: var(--ncp-primary-1);
+            color: var(--ncp-white);
             background-color: transparent;
 
             &::after {
@@ -111,5 +111,21 @@
             margin-bottom: 40px;
         }
     }
+
+    .bi-list {
+        font-size: 25px;
+    }
     
+    .navbar-toggler {
+        border: none;
+        color: var(--ncp-white);
+      
+        &:focus
+         {
+          border: none;
+          box-shadow: none;
+        }
+
+      }
+      
 }
