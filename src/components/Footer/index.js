@@ -39,7 +39,6 @@ const Footer = () => {
           <Col lg={2} md={3} xs={6} className="footer-px">
             <Nav.Link href="/project" className="footer-link">Project</Nav.Link>
             <Nav.Link href="/datapanels" className="footer-link">Data Panels</Nav.Link>
-            {/* <Nav.Link href="/subscription" className="footer-link">Subscription</Nav.Link> */}
             <Nav.Link href="/news" className="footer-link">News</Nav.Link>
             <Nav.Link href="/blog" className="footer-link">Blog</Nav.Link>
           </Col>
