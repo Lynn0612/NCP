@@ -25,14 +25,16 @@ const News = () => {
                 )}
             />
             <Breadcrumb>
-                <div className="d-flex news-bread">
+                <div className="d-flex newsbread">
                     <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                     <span className="mx-3">{' > '}</span>
                         <span className="breadcrumb-color">News</span>
                 </div>
             </Breadcrumb>
             <Container>
+                <div className="btn-fixed">
                 <NewsBtn onChange={newsBtnHandler} />
+                </div>
                 <NewsList selectedCategoryId={selectedCategoryId} />
             </Container>
         </>

@@ -6,6 +6,9 @@ import { getNews } from '@rsrc/api';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
+import icon from './newslisticon.png';
+
 
 const UserCard = () => {
     const [data, setData] = useState([]);
@@ -15,12 +18,13 @@ const UserCard = () => {
         })
     }, []);
     const limitedData = data.slice(0, 3);
+    
     return (
         <div className="desk-margin" id="home-card">
             <div className="d-flex justify-content-between">
                 <span className="fw-bold titlefs m-0">News and Updates</span>
                 <div className="d-flex align-items-end my-2 card-color">
-                    <span>More News</span>
+                    <span className="morenews">More News</span>
                     <div className="circle-bg">
                         <i className="bi bi-arrow-right">
                         </i>
@@ -32,18 +36,16 @@ const UserCard = () => {
                 {limitedData.map((item, index) => (
                     <Card className="shadow border-0" style={{ width: "410.67px" }} key={index}>
                         <Card.Img variant="top" src={item.cover_url} />
-                        <Card.Body className="p-0 rounded card-body">
-                            <Table striped className="card-table">
-                                <thead>
-                                    <tr>
-                                        <th>{moment(item.posted_at).format('MM-DD-YYYY')}</th>
-                                        <th>{item.category}</th>
-                                    </tr>
-                                </thead>
-                            </Table>
-                            <div className="m-4">
-                                <Card.Title className="fw-bold">{item.title}</Card.Title>
-                                <Card.Text className="text-truncate-multiline m-0 card-text">
+                        <Card.Body className="rounded card-body">
+                            <div>
+                                <Card.Title>{item.title}</Card.Title>
+                                <div className="moment-span">
+                                    <i className="bi bi-clock news-clock"></i>
+                                    <span>{moment(item.posted_at).format('MM-DD-YYYY')}</span>
+                                    <Image src={icon} className="news-icon" />
+                                    <span>{item.category}</span>
+                                </div>
+                                <Card.Text className="text-truncate-multiline card-text">
                                     {item.summary}
                                 </Card.Text>
                                 <div className="button-wrapper">
@@ -57,30 +59,26 @@ const UserCard = () => {
                 ))}
             </div>
             <div className="carousel-container">
-                <Carousel className="d-md-none" controls={false} indicators={false}>
+                <Carousel className="d-md-none" controls={false} indicators={true} interval={null}>
                     {limitedData.map((item, index) => (
                         <Carousel.Item key={index}>
                             <Card className="shadow border-0" style={{ width: '330px' }} key={index}>
                                 <Card.Img variant="top" src={item.cover_url} />
-                                <Card.Body className="p-0 rounded card-body">
-                                    <Table striped className="card-table">
-                                        <thead>
-                                            <tr>
-                                                <th>{moment(item.posted_at).format('MM-DD-YYYY')}</th>
-                                                <th>{item.category}</th>
-                                            </tr>
-                                        </thead>
-                                    </Table>
-                                    <div className="m-4">
-                                        <Card.Title className="fw-bold">{item.title}</Card.Title>
-                                        <Card.Text className="text-truncate-multiline m-0 card-text">
+                                <Card.Body className="rounded card-body">
+                                    <div>
+                                        <Card.Title>{item.title}</Card.Title>
+                                        <div className="moment-span">
+                                            <i className="bi bi-clock news-clock"></i>
+                                            <span>{moment(item.posted_at).format('MM-DD-YYYY')}</span>
+                                            <Image src={icon} className="news-icon" />
+                                            <span>{item.category}</span>
+                                        </div>
+                                        <Card.Text className="text-truncate-multiline card-text">
                                             {item.summary}
                                         </Card.Text>
                                         <div className="button-wrapper">
                                             <Link to={`/news/${item.slug}`} className="text-decoration-none btn-link">
-                                                <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">
-                                                    READ MORE
-                                                </Button>
+                                                <Button className="my-btn btn border-0 fw-bold px-3 my-4 w-100 d-flex justify-content-center align-items-center">READ MORE</Button>
                                             </Link>
                                         </div>
                                     </div>

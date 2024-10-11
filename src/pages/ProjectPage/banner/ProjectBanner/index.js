@@ -7,7 +7,7 @@ export const ProjectBanner = () => {
     return (
         <Container fluid id="projectbanner" className="project">
             <Row className="project-padding">
-                <Col xs={12} md={4} className="project-img d-flex p-0 justify-content-end align-items-end">
+                <Col xs={12} md={4} className="project-img d-flex justify-content-end align-items-end">
                     <Image src={project} className="projectimg" />
                 </Col>
                 <Col xs={12} md={8} className="project-content">

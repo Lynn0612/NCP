@@ -38,7 +38,7 @@ export const ProjectIntro = () => {
     return (
         <Container fluid id="projectintro" className="p-0">
             <Row className="content">
-                <Col md={12}>
+                <Col md={12} className="project-padding">
                     <p className="fw-bold title">Ecological Restoration and Financial Innovation </p>
                     <hr className="hr"></hr>
                 </Col>

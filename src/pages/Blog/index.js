@@ -24,13 +24,13 @@ const Blog = () => {
                     </>
                 )}
             />
-            <Breadcrumb>
-                <div className="d-flex news-bread">
-                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                    <span className="mx-3">{' > '}</span>
+                <Breadcrumb>
+                    <div className="d-flex news-bread">
+                        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                        <span className="mx-3">{' > '}</span>
                         <span className="breadcrumb-color">Blog</span>
-                </div>
-            </Breadcrumb>
+                    </div>
+                </Breadcrumb>
             <Container>
                 <BlogBtn onChange={newsBtnHandler} />
                 <BlogList selectedCategoryId={selectedCategoryId} />

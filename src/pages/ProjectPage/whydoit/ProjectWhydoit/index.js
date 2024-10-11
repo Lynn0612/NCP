@@ -11,7 +11,7 @@ export const ProjectWhydoit = () => {
     return (
         <Container fluid id="projectwhydoit" className="p-0">
             <Row className="content">
-                <Col md={12}>
+                <Col md={12} className="content-padding">
                     <p className="fw-bold title">Why do it?</p>
                     <hr className="hr"></hr>
                 </Col>
@@ -36,7 +36,7 @@ export const ProjectWhydoit = () => {
                         <p className="project-p">(The WWF’s Living Planet Report 2022)</p>
                     </div>
                 </Col>
-                <Col md={3} xs={12} className="icon">
+                <Col md={3} xs={12} className="icon whydoit-padding">
                     <Image src={icon4}></Image>
                     <div className="icon-bg">
                         <p className="project-title">Climate, biodiversity, and land degradation goals can only be reached if investments into nature-based solutions quickly ramp up to USD 384 billion/year by 2025, more than double of current investments.</p>

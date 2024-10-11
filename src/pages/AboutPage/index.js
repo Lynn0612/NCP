@@ -18,13 +18,12 @@ const modalStyle1 = {
 };
 const modalStyle2 = {
     width: '300px',
-    height: '420px'
+    height: '420px',
 };
 
 const modalStyle3 = {
     textAlign: 'center',
 };
-
 
 const AboutPage = () => {
     const [modalData, setModalData] = useState([]);
@@ -43,13 +42,6 @@ const AboutPage = () => {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        const contactSection = document.getElementById('about-contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, []);
-
     return (
 
         <div id="AboutPage">
@@ -60,12 +52,13 @@ const AboutPage = () => {
             <AboutArticle1 />
             <Container>
                 <Row className="content">
-                    <Col md={12}>
-                        <p className="fw-bold title">Our team</p>
+                    <Col md={12} className="p-0">
+                        <h2 className="fw-bold title">Our team</h2>
                         <hr className="hr"></hr>
                     </Col>
+                    <p>We are a diverse mix of scientists, techies, data geeks, and finance wizards united by our love of nature and our mission to unlock investment into nature at scale.</p>
                 </Row>
-                <ModalWindow modalData={modalData} modalStyle={modalStyle} modalStyle1={modalStyle1} modalStyle2={modalStyle2} modalStyle3={modalStyle3} colSizes={{ md: 3, xs: 12 }} />
+                <ModalWindow modalData={modalData} modalStyle={modalStyle} modalStyle1={modalStyle1} modalStyle2={modalStyle2}  modalStyle3={modalStyle3} colSizes={{ md: 3, xs: 12 }} page="about"/>
             </Container>
             <Partners />
             <div id="about-contact">

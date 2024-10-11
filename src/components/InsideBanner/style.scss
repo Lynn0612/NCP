@@ -28,7 +28,7 @@
 
         @include media-breakpoint-down(sm) {
             height: 100%;
-            max-height: none;
+            width: 50%;
         }
     }
 
@@ -36,6 +36,10 @@
         color: white;
         background-color: var(--ncp-highlight);
         font-size: 16px;
+        padding: 12px 24px;
+        width: 200px;
+        height: 38px;
+        margin-top: 80px;
 
         &:hover {
             background-color: var(--ncp-highlight);
@@ -46,6 +50,10 @@
             background-color: var(--ncp-highlight) !important;
             color: white !important;
             filter: brightness(85%);
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 40px;
         }
     }
 

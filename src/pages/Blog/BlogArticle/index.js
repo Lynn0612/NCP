@@ -14,14 +14,14 @@ const BlogArticle = () => {
     useEffect(() => {
         if (slug) {
             getBlogContent(slug).then(response => {
-            if (response.data) {
-              setArticle(response.data);
-            } else {
-              navigate('/404');
-            }
-          });
+                if (response.data) {
+                    setArticle(response.data);
+                } else {
+                    navigate('/404');
+                }
+            });
         }
-      }, [slug, navigate]);
+    }, [slug, navigate]);
 
     if (!article) return null;
 
@@ -32,17 +32,19 @@ const BlogArticle = () => {
                 title={article.title}
                 description={article.description}
             />
-            <Breadcrumb  fluid>
-                <div className="d-flex news-bread">
-                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                    <span className="mx-3">{' > '}</span>
-                    <Breadcrumb.Item href="/blog">
-                        Blog
-                    </Breadcrumb.Item>
-                    <span className="mx-3">{' > '}</span>
-                    <span className="breadcrumb-color">{article.title}</span>
-                </div>
-            </Breadcrumb>
+            <div className="news-breadcrumb">
+                <Breadcrumb fluid>
+                    <div className="d-flex news-bread">
+                        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                        <span className="mx-3">{' > '}</span>
+                        <Breadcrumb.Item href="/blog">
+                            Blog
+                        </Breadcrumb.Item>
+                        <span className="mx-3">{' > '}</span>
+                        <span className="breadcrumb-color">{article.title}</span>
+                    </div>
+                </Breadcrumb>
+            </div>
             <Container id="blogarticle" className="p-0">
                 <Row className="news-margin p-0">
                     <Col className="news-margin news-padding">
@@ -50,7 +52,7 @@ const BlogArticle = () => {
                         <div dangerouslySetInnerHTML={{ __html: article.content }} />
                     </Col>
                 </Row>
-                <UserCard/>
+                <UserCard />
             </Container>
         </>
     );

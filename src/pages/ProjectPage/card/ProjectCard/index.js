@@ -22,14 +22,14 @@ export const ProjectCard = () => {
     }, []);
 
     return (
-        <Container id="ProjectCard" className="project">
+        <Container fluid id="ProjectCard" className="project">
             <Row className="content">
                 <Col md={12}>
                     <p className="fw-bold title">Ecology - Flora/Fauna</p>
                     <hr className="hr"></hr>
                 </Col>
             </Row>
-            <ModalWindow modalData={modalData}/>
+            <ModalWindow modalData={modalData} page="project"/>
         </Container>
     );
 };

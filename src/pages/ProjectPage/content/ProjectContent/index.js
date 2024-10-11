@@ -8,10 +8,10 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 
 export const ProjectContent = () => {
     return (
-        <Container fluid id="projectcontent">
+        <Container id="projectcontent">
         <Row className="projectcontent-bg projectcontent-row">
             <Col md={6} className="desk-pic-margin d-flex justify-content-end align-items-center p-0">
-                <Image src={project01} className="projectcontent-pic2"/>
+                <Image src={project01} className="projectcontent-pic2 w-100"/>
             </Col>
             <Col md={6} className="desk-margin article-col">
                 <div>
@@ -32,12 +32,12 @@ export const ProjectContent = () => {
                 Experience the beauty and transformation of Bin Tan Island through stunning visual footage. These videos showcase the island’s evolving landscapes, highlighting the progress of the Natural Capital Initiative's restoration projects. From lush forests being revived to wildlife reclaiming their habitats, these films offer a compelling glimpse into the island’s ecological recovery.</p>
             </Col>
             <Col md={6} className="desk-pic-margin d-flex justify-content-start align-items-center p-0">
-                <Image src={project02} className="pic2-projectcontent"/>
+                <Image src={project02} className="pic2-projectcontent w-100"/>
             </Col>
         </Row>
         <Row className="projectcontent-bg projectcontent-row">
             <Col md={6} className="desk-pic-margin d-flex justify-content-end align-items-center p-0">
-                <Image src={project03} className="projectcontent-pic2"/>
+                <Image src={project03} className="projectcontent-pic2 w-100"/>
             </Col>
             <Col md={6} className="desk-margin article-col">
                 <div>
@@ -58,7 +58,7 @@ export const ProjectContent = () => {
                         Experience the beauty and transformation of Bin Tan Island through stunning visual footage. These videos showcase the island’s evolving landscapes, highlighting the progress of the Natural Capital Initiative's restoration projects. From lush forests being revived to wildlife reclaiming their habitats, these films offer a compelling glimpse into the island’s ecological recovery.</p>
                 </Col>
                 <Col md={6} className="desk-pic-margin d-flex justify-content-start align-items-center p-0">
-                    <Image src={project04} className="pic2-projectcontent desk-pic-mb" />
+                    <Image src={project04} className="pic2-projectcontent desk-pic-mb  w-100" />
                 </Col>
             </Row>
     </Container>
