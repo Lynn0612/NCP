@@ -29,7 +29,6 @@ const UserNavbar = () => {
                         <Nav.Link href="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Nav.Link>
                         <Nav.Link href="/project" className={location.pathname === '/project' ? 'active' : ''}>Project</Nav.Link>
                         <Nav.Link href="/datapanels" className={location.pathname === '/datapanels' ? 'active' : ''}>Data Panels</Nav.Link>
-                        {/* <Nav.Link href="subscription">Subscription</Nav.Link> */}
                         <Nav.Link href="/news" className={location.pathname === '/news' ? 'active' : ''}>News</Nav.Link>
                         <Nav.Link href="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Nav.Link>
                     </Nav>
