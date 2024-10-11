@@ -1,0 +1,49 @@
+#partners {
+
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .slider {
+        overflow: hidden;
+        background: var(--ncp-white);
+        white-space: nowrap;
+        padding: 40px 0;
+    }
+
+    .slider-items {
+        display: inline-block;
+        animation: 15s slide infinite linear;
+    }
+
+    .partners-btn {
+        background-color: transparent;
+        border: 1px solid var(--ncp-secondary);
+        ;
+        color: var(--ncp-secondary);
+        border-radius: 100px;
+        text-align: center;
+        font-size: 14px;
+
+        &:hover {
+            background-color: transparent;
+            color: var(--ncp-secondary);
+            ;
+            border: 1px solid var(--ncp-secondary);
+            ;
+        }
+
+        &:active {
+            background-color: transparent !important;
+            color: var(--ncp-secondary) !important;
+            filter: brightness(50%);
+            border: 1px solid var(--ncp-secondary) !important;
+        }
+    }
+}

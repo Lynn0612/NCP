@@ -1,0 +1,40 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#about-article {
+
+    margin: 60px 0;
+
+    @include media-breakpoint-down(md) {
+        margin: 40px 0;
+      }
+
+    .hr-margin {
+        margin: 24px 0;
+    }
+
+    .about-article {
+        white-space: pre-wrap;
+        font-size: 16px;
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    .about-bg {
+        background-color: var(--ncp-bg-3);
+    }
+
+    .title-fs {
+        font-size: 40px;
+    }
+}
+
+.about-pic {
+    text-align: end;
+
+    @include media-breakpoint-down(lg) {
+        text-align: center;
+        margin-top: 24px;
+    }
+}

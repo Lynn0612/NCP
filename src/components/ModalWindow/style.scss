@@ -1,0 +1,278 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#modalwindow {
+
+    padding: 0;
+
+    .bi::before {
+        font-size: 15px;
+        font-weight: bolder !important;
+    }
+
+    .modalmargin {
+        margin: 24px 40px; 
+        justify-content: space-between;
+
+        @include media-breakpoint-down(md) {
+           margin: 24px 20px;
+        }
+    }
+
+    .position-relative {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-m {
+        margin: 24px 40px;
+    }
+
+    .image-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .shadowed-image {
+        display: block;
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+        width: 250px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .modalcol {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(18, 17, 16, 0.00) 23.03%, var(--ncp-black-1) 81.05%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 10px;
+        padding: 24px 20px;
+
+        @include media-breakpoint-down(md) {
+            padding: 14px 12px;
+        }
+    }
+
+    .overlay-text {
+        color: var(--ncp-white);
+        z-index: 1;
+
+        @include media-breakpoint-down(md) {
+            h4 {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 9px;
+            }
+        }
+    }
+
+    .circle-bg {
+        width: 25px;
+        height: 25px;
+        background-color: var(--ncp-highlight);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        border-radius: 50%;
+        margin-left: 10px;
+        padding: 8px;
+
+        @include media-breakpoint-down(md) {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    .modal-py {
+        padding: 12px 0;
+    }
+
+    .btn {
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: 45px;
+    }
+}
+
+.modalwindow {
+
+    display: flex !important;
+
+    @include media-breakpoint-down(md) {
+        display: unset !important;
+    }
+
+    .modal-dialog {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    p {
+        color: var(--ncp-white);
+    }
+
+    .custom-modal .modal-content {
+        background: var(--modal-content-background, var(--ncp-black-1));
+        width: 800px;
+        padding: 40px 20px;
+        height: 100%;;
+
+        @include media-breakpoint-down(md) {
+            width: 100vw;
+        }
+    }
+
+    .modal-header {
+        border: none !important;
+        padding: 0;
+    }
+
+    .btndown {
+        background: transparent;
+        border: 1px solid var(--ncp-white);
+        color: var(--ncp-white);
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
+        margin: 0;
+
+        &:active {
+            background-color: transparent !important;
+            color: white !important;
+            border: 1px solid white !important;
+        }
+    }
+
+    .btntop {
+        border: none;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        background: transparent;
+        color: var(--ncp-white);
+
+        &:active {
+            background-color: transparent !important;
+            color: white !important;
+        }
+    }
+
+    .modal-footer {
+        border: none !important;
+    }
+
+    .modal-m {
+        margin: 24px 40px;
+    }
+
+    .image-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .shadowed-image {
+        display: block;
+        width: 250px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 2px;
+        left: -2px;
+        width: 102%;
+        height: 350px;
+        background: linear-gradient(180deg, rgba(18, 17, 16, 0.00) 23.03%, var(--ncp-black-1) 81.05%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .overlay-text {
+        position: absolute;
+        bottom: -60px;
+        color: var(--ncp-white);
+        z-index: 1;
+        padding: 0 20px;
+
+        h4 {
+            font-size: 24px;
+        }
+
+        @include media-breakpoint-down(md) {
+            bottom: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+    }
+
+    .modal-py {
+        padding: 12px 0;
+        @include media-breakpoint-down(md) {
+            padding:12px 20px 0 20px;
+        }
+
+    }
+
+    .content {
+
+        @include media-breakpoint-down(md) {
+            padding: 0 20px 0 20px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-top: 36px;
+        }
+    }
+    
+    .modal-body {
+        padding: 0;
+    }
+}
+
+.modal-backdrop {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutcd {
+    @include media-breakpoint-down(md) {
+        max-width: 300px;
+        max-height: 420px;
+    }
+}
+.projectcd {
+    @include media-breakpoint-down(md) {
+        max-width: 150px;
+        max-height: 210px;
+    }
+}

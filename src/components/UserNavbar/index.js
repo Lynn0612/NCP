@@ -1,33 +1,42 @@
 import React from 'react';
-import { Navbar, Nav, Container, Dropdown ,ButtonToolbar ,Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, ButtonToolbar ,Button } from 'react-bootstrap';
 import './style.scss';
+import logo from './navbarlogo.png';
+import { Image } from 'react-bootstrap';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const UserNavbar = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    
+    const scrollToContact = () => {
+        navigate('/about');
+        setTimeout(() => {
+          const contactSection = document.getElementById('about-contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500);
+      };
+      const isAboutPage = location.pathname === '/about';
     return (
-        <Navbar expand="lg" className="navbar-bg">
+        <Navbar expand="lg" id="navbar">
             <Container>
-                <Navbar.Brand href="/"><img src="./logo.svg" alt="Logo" /></Navbar.Brand>
+                <Navbar.Brand href="/"><Image src={logo} className="logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mx-auto navcolor">
-                        <Nav.Link href="#">About Us</Nav.Link>
-                        <Dropdown>
-                            <Dropdown.Toggle className="My-dropdown-toggle" variant="" id="dropdown-basic">
-                                Products
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu className="My-dropdown-menu">
-                                <Dropdown.Item href="#">1</Dropdown.Item>
-                                <Dropdown.Item href="#">2</Dropdown.Item>
-                                <Dropdown.Item href="#">3</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                        <Nav.Link href="#">Data Panels</Nav.Link>
-                        <Nav.Link href="#">Subscription</Nav.Link>
-                        <Nav.Link href="#">Blog</Nav.Link>
+                    <Nav className="mx-auto">
+                        <Nav.Link href="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Nav.Link>
+                        <Nav.Link href="/project" className={location.pathname === '/project' ? 'active' : ''}>Project</Nav.Link>
+                        <Nav.Link href="/datapanels" className={location.pathname === '/datapanels' ? 'active' : ''}>Data Panels</Nav.Link>
+                        <Nav.Link href="/news" className={location.pathname === '/news' ? 'active' : ''}>News</Nav.Link>
+                        <Nav.Link href="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Nav.Link>
                     </Nav>
                     <ButtonToolbar>
-                        <Button bsSize="xsmall" className="My-btn btn border-0 fw-bold px-3">Contact Us</Button>
-                    </ButtonToolbar>
+                    {!isAboutPage && (
+                        <Button className="my-btn btn border-0 fw-bold px-3" onClick={scrollToContact}>CONTACT US</Button>
+                    )}
+                        </ButtonToolbar>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

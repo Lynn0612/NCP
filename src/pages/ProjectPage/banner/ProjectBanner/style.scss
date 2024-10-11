@@ -1,0 +1,60 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#projectbanner {
+
+    background-color: var(--ncp-secondary);
+
+    .project {
+        @include media-breakpoint-down(md) {
+            padding: 40px 20px;
+         }
+    }
+
+    .project-img {
+
+        @include media-breakpoint-down(md) {
+            justify-content: center !important;
+            align-items: center !important;
+            padding-top: 40px;
+        }
+    }
+
+    .projectimg {
+        margin-right: 40px;
+        max-width: 100%;
+
+        @include media-breakpoint-down(md) {
+            margin-right: 0;
+        }
+    }
+
+    .project-content {
+        width: 680px;
+
+        @include media-breakpoint-down(md) {
+            padding: 24px 20px 40px 20px;
+        }
+    }
+
+    .title {
+        color: var(--ncp-white);
+        font-size: 48px;
+    }
+
+    .content {
+        color: var(--ncp-white);
+        font-size: 20px;
+    }
+
+    .project-padding {
+        padding: 60px;
+        justify-content: center;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            padding: 0;
+        }
+    }
+}

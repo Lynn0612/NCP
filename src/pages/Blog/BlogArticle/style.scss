@@ -1,0 +1,33 @@
+#blogarticle {
+
+    .news-margin {
+        margin: auto;
+        margin-bottom: 60px;
+    }
+
+    .news-padding {
+        max-width: 920px;
+
+        @media (max-width: 768px) { 
+            padding: 0 20px !important;
+        }
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    a {
+        color: var(--ncp-state-info);
+    }
+
+    hr {
+        border: 1px solid var(--ncp-black-1);
+    }
+    
+    h1 {
+        margin-top: 60px;
+        margin-bottom: 0;
+        padding-bottom: 36px;
+    }
+}

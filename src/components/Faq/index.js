@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { getFaqs } from '@rsrc/api';
 import "./style.scss"
+import { Link } from 'react-router-dom';
 
 const Faq = () => {
-    const [data, setData] = useState([]); 
+    const [data, setData] = useState([]);
     useEffect(() => {
         getFaqs().then(json => {
-            console.log(json.data.length === 0); 
-            setData(json.data); 
+            setData(json.data);
         })
     }, []);
+
+    const FaqChange = (page) => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
-        <div className="faq">
+        <div className="faq my-5" id="home-faq">
             <div>
-                <p className="fw-bold fs-1 m-0">FAQ</p>
-                <span className="py-2 d-flex justify-content-between align-items-center">Frequently Asked Questions
-                    <span className="d-flex justify-content-between"> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                <p className="fw-bold title-fs m-0">FAQ</p>
+                <span className="py-2 d-flex justify-content-between align-items-center title-sm-fs">Frequently Asked Questions
+                    <Link to={`/faq/`} className="text-decoration-none">
+                        <span className="d-flex justify-content-between more" onClick={() => FaqChange('/faq')}> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                    </Link>
                 </span>
             </div>
-            <hr className="hr my-2"></hr>
+            <hr className="hr"></hr>
             <ul className="list-group list-group-flush">
-                {data.map((item, index) => ( 
-                    <li className="list-group-item py-4" key={index}>
+                {data.map((item, index) => (
+                    <li className="list-group-item" key={index}>
                         <div
-                            className="d-flex justify-content-between align-items-center"
+                            className="d-flex justify-content-between align-items-center faq-question hr-margin"
                             data-bs-toggle="collapse"
                             href={`#collapse${index}`}
                             role="button"
@@ -35,7 +45,7 @@ const Faq = () => {
                                 <i className="bi bi-plus"></i>
                             </div>
                         </div>
-                        <div className="collapse mt-2" id={`collapse${index}`}>
+                        <div className="collapse mt-2 faq-answer" id={`collapse${index}`}>
                             <div className="p-3">
                                 {item.answer}
                             </div>
