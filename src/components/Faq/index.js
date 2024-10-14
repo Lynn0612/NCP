@@ -24,7 +24,10 @@ const Faq = () => {
                 <p className="fw-bold title-fs m-0">FAQ</p>
                 <span className="py-2 d-flex justify-content-between align-items-center title-sm-fs">Frequently Asked Questions
                     <Link to={`/faq/`} className="text-decoration-none">
-                        <span className="d-flex justify-content-between more" onClick={() => FaqChange('/faq')}> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                        <span className="d-flex justify-content-between more d-none d-lg-flex" onClick={() => FaqChange('/faq')}> More Resources <div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
+                    </Link>
+                    <Link to={`/faq/`} className="text-decoration-none">
+                        <span className="d-flex justify-content-between more d-flex d-lg-none" onClick={() => FaqChange('/faq')}><div className="circle-bg"><i className="bi bi-arrow-right"></i></div></span>
                     </Link>
                 </span>
             </div>
