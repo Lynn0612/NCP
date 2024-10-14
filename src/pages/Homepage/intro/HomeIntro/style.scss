@@ -1,0 +1,267 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+#homeintro {
+
+    background-color: var(--ncp-bg-1);
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+    padding: 0 20px !important;
+    }
+
+    .content {
+        margin: auto;
+        max-width: 1280px;
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
+    }
+
+    .intro-content {
+        margin: auto;
+        width: 1280px;
+        padding: 12px 40px;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            flex-wrap:wrap;
+            padding: 12px 12px 0 12px;
+        }
+    }
+
+    .title {
+        font-size: 32px;
+        padding-top: 60px;
+        margin: 0;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 28px;
+            padding: 40px 0 0 0;
+        }
+    }
+
+    .title-p {
+        margin-bottom: 40px;
+        font-size: 20px;
+
+        @include media-breakpoint-down(md) {
+            font-size: 18px;
+            }
+    }
+
+    .hr {
+        border: 1px solid var(--ncp-black-1);
+        margin: 24px 0;
+
+        @include media-breakpoint-down(lg) {
+            margin: 24px 0;
+            width: 100%;
+        }
+    }
+
+    .intro {
+        margin: auto;
+        max-width: 1280px;
+        display: flex;
+        justify-content: center;
+        padding: 20px 40px 60px 40px;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            padding: 24px 0 40px 0;
+        }
+    }
+
+    .intro-btn {
+        margin-top: 40px;
+        font-size: 16px;
+        background-color: var(--ncp-white);
+        border: none;
+        color: var(--ncp-black-1);
+        text-align: center;
+        padding: 12px;
+        border-radius: 10px;
+        margin: 0 12px;
+        width: 30%;
+
+        @include media-breakpoint-down(md) {
+            padding: 6px 12px;
+            margin: 0;
+        }
+
+        &:hover {
+            background-color: var(--ncp-secondary);
+            color: var(--ncp-white);
+        }
+
+        &.selected {
+            background-color: var(--ncp-secondary);
+            color: var(--ncp-white);
+        }
+    }
+
+    .introimg {
+        margin-right: 80px;
+
+        @include media-breakpoint-down(md) {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .intro-img {
+        border-radius: 10px; 
+      
+        @include media-breakpoint-down(md) {
+          width: 326px;
+          height: 200px;
+        }
+      }
+
+    .introtitle {
+        font-size: 32px;
+        margin-top: 40px;
+        color: var(--ncp-secondary);
+
+        @include media-breakpoint-down(md) {
+            margin-top: 0;
+            margin-bottom: 12px;
+            padding: 0 20px;
+            text-align: left;
+        }
+    }
+
+    .introcontent {
+        font-size: 16px;
+        @include media-breakpoint-down(md) {
+            padding: 0 20px 36px 20px;
+            margin: 0;
+            }
+    }
+    
+    .project-padding {
+        @include media-breakpoint-down(md) {
+        padding: 0;
+        }
+    }
+
+    .my-btn {
+        color: white;
+        background-color: var(--ncp-highlight);
+        font-size: 16px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 36px !important;
+            }
+
+        &:hover {
+            background-color: var(--ncp-highlight);
+            color: white;
+        }
+
+        &:active {
+            background-color: var(--ncp-highlight) !important;
+            color: white !important;
+            filter: brightness(85%);
+        }
+    }
+    
+    .bi {
+        margin-left: 12px;
+    }
+
+    .title-col {
+        margin-right: 40px;
+        padding: 0;
+
+        @include media-breakpoint-down(md) {
+            margin-right: 0;
+            }
+    }
+
+    .news-btn {
+        font-size: 16px;
+        background-color: var(--ncp-white);
+        border: 1px solid var(--ncp-black-1);
+        color: var(--ncp-black-1);
+        text-align: center;
+        border-radius: 10px;
+    
+        &.selected {
+          background-color: var(--ncp-white) !important;
+          border: 1px solid var(--ncp-highlight);
+          color: var(--ncp-highlight) !important;
+        }
+    
+        &:hover {
+          background-color: var(--ncp-white);
+          border: 1px solid var(--ncp-highlight);
+          color: var(--ncp-highlight);
+    
+          @include media-breakpoint-down(md) {
+          border: 1px solid var(--ncp-black-1);
+          }
+        }
+    
+        &:active {
+          background-color: var(--ncp-white) !important;
+          color: var(--ncp-highlight) !important;
+          filter: brightness(85%);
+          border: 1px solid var(--ncp-highlight) !important;
+        }
+      }
+    
+      .dropdown {
+        width: 102%;
+        left: -3px;
+      }
+    
+      .dropdown-toggle {
+        background-color: transparent !important;
+        border: none;
+        color: var(--ncp-highlight);
+        display: block;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+      }
+    
+      .dropdown-toggle::after {
+        display: inline-block;
+        transform: rotate(45deg);
+        color: transparent;
+        border: solid var(--ncp-gray-3);
+        border-width: 0px 2.5px 2.5px 0;
+        padding: 4px;
+      }
+    
+      .dropdown-menu {
+        border: 1px solid;
+        width: 100%;
+        transform: none !important;
+        margin-top: 48px;
+      }
+    
+      .dropdown-item {
+        background-color: transparent;
+        color: var(--ncp-black-1);
+        text-align: left;
+    
+        &:hover {
+          background-color: var(--ncp-highlight);
+          color: var(--ncp-white);
+        }
+    
+        &.active {
+          background-color: var(--ncp-highlight);
+          color: var(--ncp-white);
+        }
+      }    
+}

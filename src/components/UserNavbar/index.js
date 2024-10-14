@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Container, ButtonToolbar ,Button } from 'react-bootstrap';
 import './style.scss';
 import logo from './navbarlogo.png';
@@ -8,6 +8,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const UserNavbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [ expanded, setExpanded] = useState(false);
     
     const scrollToContact = () => {
         navigate('/about');
@@ -23,7 +24,11 @@ const UserNavbar = () => {
         <Navbar expand="lg" id="navbar">
             <Container>
                 <Navbar.Brand href="/"><Image src={logo} className="logo" /></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle 
+                    aria-controls="basic-navbar-nav" 
+                    onClick={() => setExpanded(expanded ? false : true)}>
+                    {expanded ? <i className="bi bi-x-lg"></i> : <i className="bi bi-list"></i>}
+                </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link href="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Nav.Link>

@@ -18,18 +18,27 @@ const UserCard = () => {
         })
     }, []);
     const limitedData = data.slice(0, 3);
+
+    const NewsChange = (page) => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
     
     return (
         <div className="desk-margin" id="home-card">
             <div className="d-flex justify-content-between">
                 <span className="fw-bold titlefs m-0">News and Updates</span>
-                <div className="d-flex align-items-end my-2 card-color">
+                <Link to={`/news/`} className="text-decoration-none d-flex align-items-end my-2 card-color">
+                <div className="d-flex align-items-end my-2 card-color" onClick={() => NewsChange('/news')}>
                     <span className="morenews">More News</span>
                     <div className="circle-bg">
                         <i className="bi bi-arrow-right">
                         </i>
                     </div>
                 </div>
+                </Link>
             </div>
             <hr className="hr hr-margin"></hr>
             <div className="d-none d-md-flex justify-content-around">
