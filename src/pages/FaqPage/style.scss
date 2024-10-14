@@ -1,4 +1,14 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 #faqpage {
+
+    margin-top: 149px !important;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 129px !important;
+    }
 
     a {
         display: none;
