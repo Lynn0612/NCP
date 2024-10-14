@@ -19,6 +19,7 @@
     }
 
     .about-bg {
+        margin: auto;
         background-color: var(--ncp-bg-3);
     }
 
@@ -30,7 +31,7 @@
         padding-left: 40px;
         padding-right: 320px;
 
-        @include media-breakpoint-down(md) {
+        @media (max-width: 1400px) { 
             padding: 40px 20px 0 20px;
             margin: 0;
         }
@@ -38,8 +39,9 @@
 
     .about-pic2 {
         padding-right: 40px;
+        width: 70%;
 
-        @include media-breakpoint-down(md) {
+        @media (max-width: 1400px) { 
             padding: 0 20px;
             width: 100%;
         }
@@ -49,7 +51,7 @@
         padding-right: 40px;
         padding-left: 320px;
 
-        @include media-breakpoint-down(md) {
+        @media (max-width: 1400px) { 
             padding: 40px 20px 0 20px;
             margin: 0;
         }
@@ -57,8 +59,9 @@
 
     .pic2-about {
         padding-left: 40px;
+        width: 70%;
 
-        @include media-breakpoint-down(md) {
+        @media (max-width: 1400px) { 
             padding: 0 20px;
             width: 100%
         }

@@ -86,4 +86,10 @@
     .hr-margin {
         margin: 16px 0;
     }
+    
+    .morenews {
+        @media (max-width: 768px) { 
+            display: none;
+        }
+    }
 }
