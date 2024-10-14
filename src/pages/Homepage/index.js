@@ -7,12 +7,16 @@ import Container from 'react-bootstrap/Container';
 import { UserCard } from '@/components';
 import { InsideBanner } from '@/components';
 import { Partners } from '@/components';
+import { HomeIntro } from './intro';
+import { HomeData } from './data';
 
 const HomePage = () => (
     <>
         <TopBanner />
+        <HomeIntro />
         <Partners />
         <MiddleBanner />
+        <HomeData />
         <Container>
             <UserCard />
         </Container>

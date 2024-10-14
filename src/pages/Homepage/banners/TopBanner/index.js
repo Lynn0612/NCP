@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import topbanner from './topbanner.png';
 
 export const TopBanner = () => (
-    <Container fluid className="mb-5" id='topbanner'>
+    <Container fluid id='topbanner'>
         <Row>
             <Col lg={7} className='txt-area'>
                 <div className='bannerwidth'>
